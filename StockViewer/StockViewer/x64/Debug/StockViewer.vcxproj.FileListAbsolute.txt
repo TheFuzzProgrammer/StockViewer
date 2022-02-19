@@ -6,3 +6,10 @@ E:\Trabajos\CPPStockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SalesUI
 E:\Trabajos\CPPStockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.AdvancedUI.resources
 E:\Trabajos\CPPStockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.UsersManagement.resources
 E:\Trabajos\CPPStockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.CreateUser.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.SuggestedBindingRedirects.cache
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.AdvancedUI.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.CreateUser.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SalesUI.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SVMainUI.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.UsersManagement.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.GenerateResource.cache

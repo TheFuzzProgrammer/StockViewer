@@ -1,7 +1,6 @@
 #pragma once
 #include "SalesUI.h"
 #include "AdvancedUI.h"
-#include "AdvancedUI.h"
 
 using namespace std;
 

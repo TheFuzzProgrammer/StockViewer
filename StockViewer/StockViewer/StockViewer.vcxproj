@@ -78,11 +78,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>userslib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>E:\Trabajos\StockViewer\ExternalDependences\userslib\$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -120,11 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdvancedUI.cpp" />
-    <ClCompile Include="CreateUser.cpp" />
-    <ClCompile Include="SalesUI.cpp" />
     <ClCompile Include="SVMain.cpp" />
-    <ClCompile Include="UsersManagement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdvancedUI.h">

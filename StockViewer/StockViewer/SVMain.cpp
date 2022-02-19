@@ -1,4 +1,5 @@
 #include "SVMainUI.h"
+#include "userslib.h"
 
 using namespace StockViewer;
 
