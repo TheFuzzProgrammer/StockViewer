@@ -74,20 +74,25 @@ namespace StockViewer {
 			// btn_container
 			// 
 			this->btn_container->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->btn_container->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_container.BackgroundImage")));
+			this->btn_container->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->btn_container->Controls->Add(this->advanced_btn);
 			this->btn_container->Controls->Add(this->search_product_btn);
 			this->btn_container->Controls->Add(this->product_mng_btn);
 			this->btn_container->Controls->Add(this->new_sale_btn);
 			this->btn_container->Controls->Add(this->uplimiter_panel);
 			this->btn_container->Dock = System::Windows::Forms::DockStyle::Left;
+			this->btn_container->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->btn_container->Location = System::Drawing::Point(0, 0);
 			this->btn_container->Name = L"btn_container";
+			this->btn_container->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->btn_container->Size = System::Drawing::Size(289, 729);
 			this->btn_container->TabIndex = 0;
 			// 
 			// advanced_btn
 			// 
 			this->advanced_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"advanced_btn.BackgroundImage")));
+			this->advanced_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->advanced_btn->Dock = System::Windows::Forms::DockStyle::Top;
 			this->advanced_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->advanced_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -106,6 +111,7 @@ namespace StockViewer {
 			// search_product_btn
 			// 
 			this->search_product_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"search_product_btn.BackgroundImage")));
+			this->search_product_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->search_product_btn->Dock = System::Windows::Forms::DockStyle::Top;
 			this->search_product_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->search_product_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -159,6 +165,8 @@ namespace StockViewer {
 			// 
 			// uplimiter_panel
 			// 
+			this->uplimiter_panel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"uplimiter_panel.BackgroundImage")));
+			this->uplimiter_panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->uplimiter_panel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->uplimiter_panel->Location = System::Drawing::Point(0, 0);
 			this->uplimiter_panel->Name = L"uplimiter_panel";
@@ -168,12 +176,14 @@ namespace StockViewer {
 			// info_panel
 			// 
 			this->info_panel->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->info_panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->info_panel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"info_panel.BackgroundImage")));
+			this->info_panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->info_panel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->info_panel->Location = System::Drawing::Point(0, 0);
 			this->info_panel->Name = L"info_panel";
 			this->info_panel->Size = System::Drawing::Size(1008, 729);
 			this->info_panel->TabIndex = 1;
+			this->info_panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &SVMainUI::info_panel_Paint);
 			// 
 			// container_panel
 			// 
@@ -225,5 +235,7 @@ namespace StockViewer {
 		AdvancedUI^ advanced_dialog = gcnew StockViewer::AdvancedUI();
 		advanced_dialog->Show();
 	}
+private: System::Void info_panel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }
