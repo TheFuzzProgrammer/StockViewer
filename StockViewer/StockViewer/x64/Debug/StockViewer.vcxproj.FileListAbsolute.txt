@@ -13,3 +13,4 @@ E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SalesUI.re
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SVMainUI.resources
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.UsersManagement.resources
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.GenerateResource.cache
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.AssemblyReference.cache
