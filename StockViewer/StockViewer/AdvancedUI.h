@@ -45,6 +45,7 @@ namespace StockViewer {
 	private: System::Windows::Forms::Button^ cancel_sale_btn;
 
 
+
 	private:
 
 		System::ComponentModel::Container ^components;
@@ -53,6 +54,7 @@ namespace StockViewer {
 
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdvancedUI::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->taxes_btn = (gcnew System::Windows::Forms::Button());
 			this->statics_btn = (gcnew System::Windows::Forms::Button());
@@ -68,7 +70,8 @@ namespace StockViewer {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel1->Controls->Add(this->taxes_btn);
 			this->panel1->Controls->Add(this->statics_btn);
 			this->panel1->Controls->Add(this->add_user_btn);
@@ -81,13 +84,19 @@ namespace StockViewer {
 			// 
 			// taxes_btn
 			// 
+			this->taxes_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"taxes_btn.BackgroundImage")));
+			this->taxes_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->taxes_btn->Dock = System::Windows::Forms::DockStyle::Top;
-			this->taxes_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
-			this->taxes_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->taxes_btn->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->taxes_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->taxes_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->taxes_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->taxes_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->taxes_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->taxes_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->taxes_btn->Location = System::Drawing::Point(0, 402);
 			this->taxes_btn->Name = L"taxes_btn";
 			this->taxes_btn->Size = System::Drawing::Size(289, 70);
@@ -97,13 +106,19 @@ namespace StockViewer {
 			// 
 			// statics_btn
 			// 
+			this->statics_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"statics_btn.BackgroundImage")));
+			this->statics_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->statics_btn->Dock = System::Windows::Forms::DockStyle::Top;
-			this->statics_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
-			this->statics_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->statics_btn->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->statics_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->statics_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->statics_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->statics_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->statics_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->statics_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->statics_btn->Location = System::Drawing::Point(0, 332);
 			this->statics_btn->Name = L"statics_btn";
 			this->statics_btn->Size = System::Drawing::Size(289, 70);
@@ -113,13 +128,19 @@ namespace StockViewer {
 			// 
 			// add_user_btn
 			// 
+			this->add_user_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"add_user_btn.BackgroundImage")));
+			this->add_user_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->add_user_btn->Dock = System::Windows::Forms::DockStyle::Top;
-			this->add_user_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
-			this->add_user_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->add_user_btn->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->add_user_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->add_user_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->add_user_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->add_user_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->add_user_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->add_user_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->add_user_btn->Location = System::Drawing::Point(0, 262);
 			this->add_user_btn->Name = L"add_user_btn";
 			this->add_user_btn->Size = System::Drawing::Size(289, 70);
@@ -130,6 +151,8 @@ namespace StockViewer {
 			// 
 			// panel4
 			// 
+			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel4->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel4->Location = System::Drawing::Point(0, 0);
 			this->panel4->Name = L"panel4";
@@ -138,7 +161,8 @@ namespace StockViewer {
 			// 
 			// info_panel
 			// 
-			this->info_panel->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->info_panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->info_panel->Controls->Add(this->panel2);
 			this->info_panel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->info_panel->Location = System::Drawing::Point(289, 0);
@@ -148,7 +172,8 @@ namespace StockViewer {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->panel2->Controls->Add(this->cancel_sale_btn);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->panel2->Location = System::Drawing::Point(0, 629);
@@ -158,10 +183,11 @@ namespace StockViewer {
 			// 
 			// cancel_sale_btn
 			// 
-			this->cancel_sale_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
-			this->cancel_sale_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->cancel_sale_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->cancel_sale_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->cancel_sale_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->cancel_sale_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Maroon;
 			this->cancel_sale_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->cancel_sale_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -180,6 +206,7 @@ namespace StockViewer {
 			this->ClientSize = System::Drawing::Size(1008, 729);
 			this->Controls->Add(this->info_panel);
 			this->Controls->Add(this->panel1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1024, 768);
 			this->MinimumSize = System::Drawing::Size(1024, 768);
 			this->Name = L"AdvancedUI";

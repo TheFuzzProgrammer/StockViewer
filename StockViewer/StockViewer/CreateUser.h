@@ -59,6 +59,7 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ result_label;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	protected:
@@ -88,6 +89,7 @@ namespace StockViewer {
 			this->surname = (gcnew System::Windows::Forms::TextBox());
 			this->name = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->preview_btn = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -96,7 +98,7 @@ namespace StockViewer {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->preview_btn = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->info_panel->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -104,7 +106,9 @@ namespace StockViewer {
 			// 
 			// info_panel
 			// 
-			this->info_panel->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->info_panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->info_panel->Controls->Add(this->button1);
 			this->info_panel->Controls->Add(this->result_label);
 			this->info_panel->Controls->Add(this->comboBox1);
 			this->info_panel->Controls->Add(this->birth);
@@ -133,6 +137,9 @@ namespace StockViewer {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->comboBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"MALE", L"FEMALE", L"NON BIN" });
 			this->comboBox1->Location = System::Drawing::Point(283, 340);
@@ -142,34 +149,58 @@ namespace StockViewer {
 			// 
 			// birth
 			// 
+			this->birth->CalendarFont = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->birth->CalendarForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->birth->CalendarMonthBackground = System::Drawing::SystemColors::GrayText;
+			this->birth->CalendarTitleBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->birth->CalendarTitleForeColor = System::Drawing::SystemColors::GrayText;
+			this->birth->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->birth->Location = System::Drawing::Point(283, 300);
 			this->birth->Name = L"birth";
-			this->birth->Size = System::Drawing::Size(200, 20);
+			this->birth->Size = System::Drawing::Size(200, 23);
 			this->birth->TabIndex = 10;
 			// 
 			// document
 			// 
+			this->document->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->document->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->document->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->document->Location = System::Drawing::Point(282, 259);
 			this->document->Name = L"document";
-			this->document->Size = System::Drawing::Size(327, 20);
+			this->document->Size = System::Drawing::Size(327, 23);
 			this->document->TabIndex = 9;
 			// 
 			// surname
 			// 
+			this->surname->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->surname->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->surname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->surname->Location = System::Drawing::Point(282, 221);
 			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(327, 20);
+			this->surname->Size = System::Drawing::Size(327, 23);
 			this->surname->TabIndex = 8;
 			// 
 			// name
 			// 
+			this->name->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->name->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->name->Location = System::Drawing::Point(283, 180);
 			this->name->Name = L"name";
-			this->name->Size = System::Drawing::Size(327, 20);
+			this->name->Size = System::Drawing::Size(327, 23);
 			this->name->TabIndex = 2;
 			// 
 			// panel3
 			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel3->Controls->Add(this->preview_btn);
 			this->panel3->Controls->Add(this->label6);
 			this->panel3->Controls->Add(this->label5);
@@ -182,11 +213,33 @@ namespace StockViewer {
 			this->panel3->Size = System::Drawing::Size(213, 489);
 			this->panel3->TabIndex = 7;
 			// 
+			// preview_btn
+			// 
+			this->preview_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->preview_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->preview_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->preview_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->preview_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->preview_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->preview_btn->Location = System::Drawing::Point(16, 396);
+			this->preview_btn->Name = L"preview_btn";
+			this->preview_btn->Size = System::Drawing::Size(175, 70);
+			this->preview_btn->TabIndex = 5;
+			this->preview_btn->Text = L"Preview";
+			this->preview_btn->UseVisualStyleBackColor = true;
+			this->preview_btn->Click += gcnew System::EventHandler(this, &CreateUser::preview_btn_Click);
+			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label6->Location = System::Drawing::Point(69, 198);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(89, 24);
@@ -196,8 +249,10 @@ namespace StockViewer {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label5->Location = System::Drawing::Point(69, 160);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(143, 24);
@@ -207,8 +262,10 @@ namespace StockViewer {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label4->Location = System::Drawing::Point(69, 119);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(122, 24);
@@ -218,8 +275,10 @@ namespace StockViewer {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label3->Location = System::Drawing::Point(69, 81);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(106, 24);
@@ -229,8 +288,10 @@ namespace StockViewer {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label2->Location = System::Drawing::Point(69, 40);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(93, 24);
@@ -239,6 +300,8 @@ namespace StockViewer {
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -249,8 +312,10 @@ namespace StockViewer {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label1->Location = System::Drawing::Point(278, 60);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(180, 24);
@@ -259,28 +324,32 @@ namespace StockViewer {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->panel2->Location = System::Drawing::Point(0, 629);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(719, 100);
 			this->panel2->TabIndex = 2;
 			// 
-			// preview_btn
+			// button1
 			// 
-			this->preview_btn->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
-			this->preview_btn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->preview_btn->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->preview_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->preview_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->preview_btn->Location = System::Drawing::Point(16, 396);
-			this->preview_btn->Name = L"preview_btn";
-			this->preview_btn->Size = System::Drawing::Size(175, 70);
-			this->preview_btn->TabIndex = 5;
-			this->preview_btn->Text = L"Preview";
-			this->preview_btn->UseVisualStyleBackColor = true;
-			this->preview_btn->Click += gcnew System::EventHandler(this, &CreateUser::preview_btn_Click);
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button1->Location = System::Drawing::Point(532, 536);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(175, 70);
+			this->button1->TabIndex = 6;
+			this->button1->Text = L"Create user";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// CreateUser
 			// 
