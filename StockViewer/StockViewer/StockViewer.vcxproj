@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -122,6 +123,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="SVMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +133,11 @@
     <ClInclude Include="CreateUser.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="DataBase.h" />
     <ClInclude Include="SalesUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SearchUserUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SVMainUI.h">
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesUI.resx">
       <DependentUpon>SalesUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchUserUI.resx">
+      <DependentUpon>SearchUserUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SVMainUI.resx">
       <DependentUpon>SVMainUI.h</DependentUpon>

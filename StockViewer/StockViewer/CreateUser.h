@@ -39,7 +39,7 @@ namespace StockViewer {
 
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Panel^ panel2;
+
 	private: System::Windows::Forms::Button^ preview_btn;
 
 
@@ -62,6 +62,7 @@ namespace StockViewer {
 	private: System::Windows::Forms::Button^ button1;
 
 
+
 	protected:
 
 
@@ -82,6 +83,7 @@ namespace StockViewer {
 		void InitializeComponent(void)
 		{
 			this->info_panel = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->result_label = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->birth = (gcnew System::Windows::Forms::DateTimePicker());
@@ -97,8 +99,6 @@ namespace StockViewer {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->info_panel->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -117,12 +117,30 @@ namespace StockViewer {
 			this->info_panel->Controls->Add(this->name);
 			this->info_panel->Controls->Add(this->panel3);
 			this->info_panel->Controls->Add(this->panel1);
-			this->info_panel->Controls->Add(this->panel2);
 			this->info_panel->Location = System::Drawing::Point(1, 0);
 			this->info_panel->Name = L"info_panel";
-			this->info_panel->Size = System::Drawing::Size(719, 729);
+			this->info_panel->Size = System::Drawing::Size(719, 630);
 			this->info_panel->TabIndex = 4;
 			this->info_panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CreateUser::info_panel_Paint);
+			// 
+			// button1
+			// 
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button1->Location = System::Drawing::Point(532, 536);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(175, 70);
+			this->button1->TabIndex = 6;
+			this->button1->Text = L"Create user";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// result_label
 			// 
@@ -161,7 +179,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->birth->Location = System::Drawing::Point(283, 300);
 			this->birth->Name = L"birth";
-			this->birth->Size = System::Drawing::Size(200, 23);
+			this->birth->Size = System::Drawing::Size(275, 23);
 			this->birth->TabIndex = 10;
 			// 
 			// document
@@ -210,7 +228,7 @@ namespace StockViewer {
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel3->Location = System::Drawing::Point(0, 140);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(213, 489);
+			this->panel3->Size = System::Drawing::Size(213, 490);
 			this->panel3->TabIndex = 7;
 			// 
 			// preview_btn
@@ -322,40 +340,13 @@ namespace StockViewer {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Create new user";
 			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel2->Location = System::Drawing::Point(0, 629);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(719, 100);
-			this->panel2->TabIndex = 2;
-			// 
-			// button1
-			// 
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->button1->Location = System::Drawing::Point(532, 536);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(175, 70);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Create user";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
 			// CreateUser
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(720, 729);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(20)));
+			this->ClientSize = System::Drawing::Size(720, 629);
 			this->Controls->Add(this->info_panel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CreateUser";
@@ -387,7 +378,7 @@ private: System::Void preview_btn_Click(System::Object^ sender, System::EventArg
 	String^ temp_birth = this->birth->Value.ToLongDateString();
 
 	this->result_label->Text = temp_name + "\n" + temp_surname + "\n" + temp_doc + "\n" + temp_birth;
-
 }
+
 };
 }

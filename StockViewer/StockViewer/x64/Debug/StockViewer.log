@@ -9,6 +9,6 @@ E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(34,10):
 D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(35,10): warning C4251: 'users::Person::document': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
 D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  SVMain.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  DataBase.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
      Creando biblioteca E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.lib y objeto E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.exp
   StockViewer.vcxproj -> E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.exe

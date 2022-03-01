@@ -41,8 +41,12 @@ namespace StockViewer {
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ info_panel;
 	private: System::Windows::Forms::Panel^ panel2;
-
 	private: System::Windows::Forms::Button^ cancel_sale_btn;
+
+
+
+
+
 
 
 
@@ -64,7 +68,6 @@ namespace StockViewer {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->cancel_sale_btn = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
-			this->info_panel->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -163,34 +166,34 @@ namespace StockViewer {
 			// 
 			this->info_panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->info_panel->Controls->Add(this->panel2);
-			this->info_panel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->info_panel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->info_panel->Location = System::Drawing::Point(289, 0);
 			this->info_panel->Name = L"info_panel";
-			this->info_panel->Size = System::Drawing::Size(719, 729);
+			this->info_panel->Size = System::Drawing::Size(719, 629);
 			this->info_panel->TabIndex = 2;
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->panel2->Controls->Add(this->cancel_sale_btn);
-			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel2->Location = System::Drawing::Point(0, 629);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panel2->Location = System::Drawing::Point(289, 629);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(719, 100);
-			this->panel2->TabIndex = 2;
+			this->panel2->TabIndex = 3;
 			// 
 			// cancel_sale_btn
 			// 
-			this->cancel_sale_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->cancel_sale_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->cancel_sale_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->cancel_sale_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Maroon;
 			this->cancel_sale_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->cancel_sale_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->cancel_sale_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->cancel_sale_btn->Location = System::Drawing::Point(532, 18);
 			this->cancel_sale_btn->Name = L"cancel_sale_btn";
 			this->cancel_sale_btn->Size = System::Drawing::Size(175, 70);
@@ -203,7 +206,10 @@ namespace StockViewer {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->info_panel);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -213,7 +219,6 @@ namespace StockViewer {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Advanced ";
 			this->panel1->ResumeLayout(false);
-			this->info_panel->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 
