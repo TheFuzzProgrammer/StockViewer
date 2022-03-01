@@ -12,6 +12,7 @@ private:
 public:
 	DataBase(String^);
 	DataTable^ get_data(String^);
+	String^ dump_to_database(String^, String^);
 	void open_session();
 	void close_session();
 

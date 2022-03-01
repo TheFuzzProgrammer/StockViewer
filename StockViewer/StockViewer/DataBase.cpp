@@ -23,3 +23,20 @@ DataTable^ DataBase::get_data(String^ _query) {
 	
 	return table;
 }
+
+String^ DataBase::dump_to_database(String^ db, String^ _query){
+	String^ query = "insert into " + db + " values (" + _query + ")";
+	MySqlCommand^ command = gcnew MySqlCommand(query, this->database_connector);
+	try {
+		command->ExecuteNonQuery();
+		return "Exito!";
+	}
+	catch (Exception^ db_exception)
+	{
+		using namespace System::Windows::Forms;
+		using namespace System::Data;
+		using namespace System::Drawing;
+		MessageBox::Show(db_exception->Message);
+		return query;
+	}
+}

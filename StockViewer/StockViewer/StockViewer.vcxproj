@@ -134,6 +134,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DataBase.h" />
+    <ClInclude Include="database_manager.h" />
     <ClInclude Include="SalesUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>

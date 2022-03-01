@@ -235,11 +235,12 @@ Class StockViewer.SalesUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class StockViewer.CreateUser: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    get_person(Person*): PrivateScope, Public, HideBySig
 Class StockViewer.SearchUserUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    get_query(): PrivateScope, Public, HideBySig
     to_grid(): PrivateScope, Public, HideBySig
 Class StockViewer.UsersManagement: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

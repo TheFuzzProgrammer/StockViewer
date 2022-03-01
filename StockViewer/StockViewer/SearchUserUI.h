@@ -1,5 +1,7 @@
 #pragma once
 #include "DataBase.h"
+#include "database_manager.h"
+
 namespace StockViewer {
 
 	using namespace System;
@@ -52,16 +54,9 @@ namespace StockViewer {
 	protected:
 
 	private:
-		/// <summary>
-		/// Variable del diseñador necesaria.
-		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
-		/// </summary>
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
@@ -248,15 +243,9 @@ namespace StockViewer {
 
 		}
 #pragma endregion
-	public: String^ get_query() {
-		//"datasource=localhost; username=root; password=""; database=svlocal;"
-		//"select * from users ";
-		String^ query = "SELECT * FROM users WHERE Document = '" + this->document->Text + "'";
-		return query;
-	}
 	public: void to_grid() {
 		this->database_data->open_session();
-		this->dataGridView1->DataSource = this->database_data->get_data(get_query());
+		this->dataGridView1->DataSource = this->database_data->get_data(get_query(this->document->Text));
 		this->database_data->close_session();
 	}
 
