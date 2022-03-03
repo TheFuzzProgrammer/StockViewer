@@ -9,7 +9,6 @@ namespace StockViewer {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	
 	public ref class SalesUI : public System::Windows::Forms::Form
 	{
 	public:
@@ -32,21 +31,19 @@ namespace StockViewer {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Button^ add_observation_btn;
-
 	private: System::Windows::Forms::Button^ restart_sale_btn;
-
 	private: System::Windows::Forms::Button^ search_client_btn;
-
 	private: System::Windows::Forms::Button^ add_discount_btn;
 	private: System::Windows::Forms::Button^ preview_btn;
 	private: System::Windows::Forms::Button^ cancel_sale_btn;
 	private: System::Windows::Forms::Button^ sell_btn;
 
 
+
 	private:
 		System::ComponentModel::Container ^components;
 
-#pragma region Windows Form Designer generated code
+#pragma region 
 
 		void InitializeComponent(void)
 		{

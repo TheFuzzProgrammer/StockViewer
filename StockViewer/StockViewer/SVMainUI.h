@@ -19,15 +19,10 @@ namespace StockViewer {
 		SVMainUI(void)
 		{
 			InitializeComponent();
-			//
-			//Constructor
-			//
+
 		}
 
 	protected:
-		/// <summary>
-		/// Resources cleanner 
-		/// </summary>
 		~SVMainUI()
 		{
 			if (components)
@@ -35,18 +30,9 @@ namespace StockViewer {
 				delete components;
 			}
 		}
-
 	protected:
 
 	private: System::Windows::Forms::Panel^ container_panel;
-
-
-
-
-
-
-
-
 	private: bool on_move = false;
 	private: System::Windows::Forms::Panel^ btn_container;
 	private: System::Windows::Forms::Button^ advanced_btn;
@@ -54,23 +40,11 @@ namespace StockViewer {
 	private: System::Windows::Forms::Button^ product_mng_btn;
 	private: System::Windows::Forms::Button^ new_sale_btn;
 	private: System::Windows::Forms::Panel^ uplimiter_panel;
-
-
-
-
-
-
-
 	private:
-		/// <summary>
-		/// Designer Vars
-		/// </summary>
 		System::ComponentModel::Container ^components;
 
-#pragma region Windows Form Designer generated code
-		/// <summary>
-		///Designer Method
-		/// </summary>
+#pragma region
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SVMainUI::typeid));
@@ -238,7 +212,6 @@ namespace StockViewer {
 			this->container_panel->ResumeLayout(false);
 			this->btn_container->ResumeLayout(false);
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	template <class T>
@@ -251,7 +224,6 @@ namespace StockViewer {
 		this->info_panel->Tag = SonForm;
 		SonForm->Show();
 	}
-
 	private: System::Void SVMainUI_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void new_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {

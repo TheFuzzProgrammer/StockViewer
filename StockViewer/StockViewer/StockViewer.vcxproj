@@ -144,7 +144,10 @@
     <ClInclude Include="SVMainUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UsersManagement.h">
+    <ClInclude Include="UpdateUserUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UsersManagementUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -164,8 +167,11 @@
     <EmbeddedResource Include="SVMainUI.resx">
       <DependentUpon>SVMainUI.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersManagement.resx">
-      <DependentUpon>UsersManagement.h</DependentUpon>
+    <EmbeddedResource Include="UpdateUserUI.resx">
+      <DependentUpon>UpdateUserUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManagementUI.resx">
+      <DependentUpon>UsersManagementUI.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

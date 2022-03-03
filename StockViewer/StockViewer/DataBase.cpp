@@ -29,7 +29,7 @@ String^ DataBase::dump_to_database(String^ db, String^ _query){
 	MySqlCommand^ command = gcnew MySqlCommand(query, this->database_connector);
 	try {
 		command->ExecuteNonQuery();
-		return "Exito!";
+		return "Done!";
 	}
 	catch (Exception^ db_exception)
 	{

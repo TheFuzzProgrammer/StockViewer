@@ -11,25 +11,15 @@ namespace StockViewer {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Resumen de SearchUserUI
-	/// </summary>
 	public ref class SearchUserUI : public System::Windows::Forms::Form
 	{
 	public:
 		SearchUserUI(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
 			database_data = gcnew DataBase("datasource=localhost; username=root; password=""; database=svlocal;");
 		}
-
 	protected:
-		/// <summary>
-		/// Limpiar los recursos que se estén usando.
-		/// </summary>
 		~SearchUserUI()
 		{
 			if (components)
@@ -56,7 +46,7 @@ namespace StockViewer {
 	private:
 		System::ComponentModel::Container ^components;
 
-#pragma region Windows Form Designer generated code
+#pragma region
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());

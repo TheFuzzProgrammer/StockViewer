@@ -1,9 +1,8 @@
 #pragma once
-#include "UsersManagement.h"
+#include "UsersManagementUI.h"
 #include "CreateUser.h"
 
 namespace StockViewer {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -17,9 +16,7 @@ namespace StockViewer {
 		AdvancedUI(void)
 		{
 			InitializeComponent();
-
 		}
-
 	protected:
 
 		~AdvancedUI()
@@ -31,27 +28,14 @@ namespace StockViewer {
 		}
 	private: System::Windows::Forms::Panel^ panel1;
 	protected:
-
 	private: System::Windows::Forms::Button^ taxes_btn;
-
 	private: System::Windows::Forms::Button^ statics_btn;
-
 	private: System::Windows::Forms::Button^ add_user_btn;
-
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ info_panel;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ cancel_sale_btn;
-
-
-
-
-
-
-
-
 	private:
-
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -221,7 +205,6 @@ namespace StockViewer {
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 		template <class T>
@@ -234,7 +217,6 @@ namespace StockViewer {
 			this->info_panel->Tag = SonForm;
 			SonForm->Show();
 		}
-		
 	private: System::Void add_user_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		UsersManagement^ user_dialog = gcnew StockViewer::UsersManagement();
 		open_info_panel(user_dialog);

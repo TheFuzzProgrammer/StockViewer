@@ -3,7 +3,8 @@
   StockViewer.SalesUI.resources - Embedded, ContainedInManifestFile, 
   StockViewer.SearchUserUI.resources - Embedded, ContainedInManifestFile, 
   StockViewer.SVMainUI.resources - Embedded, ContainedInManifestFile, 
-  StockViewer.UsersManagement.resources - Embedded, ContainedInManifestFile, 
+  StockViewer.UpdateUserUI.resources - Embedded, ContainedInManifestFile, 
+  StockViewer.UsersManagementUI.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly StockViewer, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=SHA1, flags=PublicKey
@@ -242,6 +243,12 @@ Class StockViewer.SearchUserUI: AutoLayout, AnsiClass, Class, Public, BeforeFiel
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     to_grid(): PrivateScope, Public, HideBySig
+Class StockViewer.UpdateUserUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    to_grid(): PrivateScope, Public, HideBySig
+    make_update(): PrivateScope, Public, HideBySig
 Class StockViewer.UsersManagement: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

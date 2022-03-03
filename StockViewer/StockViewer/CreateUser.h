@@ -6,7 +6,6 @@
 #include "DataBase.h"
 
 namespace StockViewer {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -14,9 +13,6 @@ namespace StockViewer {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Resumen de CreateUser
-	/// </summary>
 	public ref class CreateUser : public System::Windows::Forms::Form
 	{
 	public:
@@ -27,7 +23,6 @@ namespace StockViewer {
 		}
 
 	protected:
-
 		~CreateUser()
 		{
 			if (components)
@@ -53,14 +48,12 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ result_label;
 	private: System::Windows::Forms::Button^ create_user;
-
 	private: DataBase^ database_data;
-	private: System::Windows::Forms::Label^ label7;
 	protected:
 	private:
 		System::ComponentModel::Container ^components;
 
-#pragma region Windows Form Designer generated code
+#pragma region
 		void InitializeComponent(void)
 		{
 			this->info_panel = (gcnew System::Windows::Forms::Panel());
@@ -80,7 +73,6 @@ namespace StockViewer {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->info_panel->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -304,7 +296,6 @@ namespace StockViewer {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->panel1->Controls->Add(this->label7);
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -324,15 +315,6 @@ namespace StockViewer {
 			this->label1->Size = System::Drawing::Size(180, 24);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Create new user";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(18, 110);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(35, 13);
-			this->label7->TabIndex = 1;
-			this->label7->Text = L"label7";
 			// 
 			// CreateUser
 			// 
@@ -402,7 +384,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	this->database_data->open_session();	 
 	String^ results = this->database_data->dump_to_database("users (Name, Surname, Document, Gendre, Admin)", q_str);
 	this->database_data->close_session();
-	this->label7->Text = results;
+	this->result_label->Text = results;
 }
 };
 }
