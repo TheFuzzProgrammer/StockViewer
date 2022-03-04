@@ -124,6 +124,7 @@ namespace StockViewer {
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(0);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
+			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->Size = System::Drawing::Size(720, 420);
 			this->dataGridView1->TabIndex = 0;
 			// 

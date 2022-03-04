@@ -1,5 +1,9 @@
 #include "DataBase.h"
 
+using namespace System::Windows::Forms;
+using namespace System::Data;
+using namespace System::Drawing;
+
 DataBase::DataBase(String^ _connection) 
 {
 	this->connection = _connection; //localhost db
@@ -7,7 +11,12 @@ DataBase::DataBase(String^ _connection)
 }
 
 void DataBase::open_session() {
-	this->database_connector->Open(); //open the db connection
+	try {
+		this->database_connector->Open(); //open the db connection
+	}
+	catch(Exception^ db_exception) {
+		MessageBox::Show("Database critical error");
+	}
 }
 
 void DataBase::close_session() {
@@ -18,9 +27,14 @@ DataTable^ DataBase::get_data(String^ _query) {
 	String^ sql_query = _query; //Your Query
 	MySqlCommand^ command = gcnew MySqlCommand(sql_query, this->database_connector); 
 	MySqlDataAdapter^ data_adapter = gcnew MySqlDataAdapter(command); 
-	DataTable^ table = gcnew DataTable();
-	data_adapter->Fill(table);
-	
+	DataTable^ table;
+	try {
+		table = gcnew DataTable();
+		data_adapter->Fill(table);
+	}
+	catch (Exception^ db_exception) {
+		MessageBox::Show("Could not connect to database. \nMake shure it's enabled an running");
+	}
 	return table;
 }
 
@@ -33,9 +47,6 @@ String^ DataBase::dump_to_database(String^ db, String^ _query){
 	}
 	catch (Exception^ db_exception)
 	{
-		using namespace System::Windows::Forms;
-		using namespace System::Data;
-		using namespace System::Drawing;
 		MessageBox::Show(db_exception->Message);
 		return query;
 	}
