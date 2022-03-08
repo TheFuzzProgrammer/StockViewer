@@ -130,6 +130,7 @@
     <ClInclude Include="AdvancedUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="connections.h" />
     <ClInclude Include="CreateUser.h">
       <FileType>CppForm</FileType>
     </ClInclude>

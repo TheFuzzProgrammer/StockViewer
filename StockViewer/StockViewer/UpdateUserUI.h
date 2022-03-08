@@ -19,7 +19,6 @@ namespace StockViewer {
 			database_data = gcnew DataBase("datasource=localhost; username=root; password=""; database=svlocal;");
 			user_founded, user_selected = false;
 		}
-
 	protected:
 		~UpdateUserUI()
 		{
@@ -28,7 +27,6 @@ namespace StockViewer {
 				delete components;
 			}
 		}
-	
 	private:
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
@@ -40,6 +38,25 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ label1;
 	private: DataBase^ database_data;
 	private: bool user_founded, user_selected;
+	private: System::Windows::Forms::Label^ result_txt;
+	private: System::Windows::Forms::Label^ gendre_txt;
+	private: System::Windows::Forms::Label^ document_txt;
+	private: System::Windows::Forms::Label^ surname_txt;
+	private: System::Windows::Forms::Label^ name_txt;
+	private: System::Windows::Forms::Label^ is_admin_txt;
+	private: System::Windows::Forms::Label^ name_label;
+	private: System::Windows::Forms::Label^ surname_label;
+	private: System::Windows::Forms::Label^ document_label;
+	private: System::Windows::Forms::Label^ gendre_label;
+	private: System::Windows::Forms::Button^ edit_user_btn;
+	private: System::Windows::Forms::TextBox^ name_in;
+	private: System::Windows::Forms::TextBox^ surname_in;
+	private: System::Windows::Forms::TextBox^ document_in;
+	private: System::Windows::Forms::CheckBox^ is_admin_ask;
+	private: System::Windows::Forms::ComboBox^ gendre_input;
+	private: System::Windows::Forms::Button^ cancel_query_btn;
+	private: System::Windows::Forms::Button^ make_query_btn;
+	private: System::Windows::Forms::Label^ is_admin_label;
 
 #pragma region 
 		void InitializeComponent(void)
@@ -53,6 +70,25 @@ namespace StockViewer {
 			this->search_user = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->result_txt = (gcnew System::Windows::Forms::Label());
+			this->gendre_txt = (gcnew System::Windows::Forms::Label());
+			this->document_txt = (gcnew System::Windows::Forms::Label());
+			this->surname_txt = (gcnew System::Windows::Forms::Label());
+			this->name_txt = (gcnew System::Windows::Forms::Label());
+			this->is_admin_txt = (gcnew System::Windows::Forms::Label());
+			this->name_label = (gcnew System::Windows::Forms::Label());
+			this->surname_label = (gcnew System::Windows::Forms::Label());
+			this->document_label = (gcnew System::Windows::Forms::Label());
+			this->gendre_label = (gcnew System::Windows::Forms::Label());
+			this->is_admin_label = (gcnew System::Windows::Forms::Label());
+			this->edit_user_btn = (gcnew System::Windows::Forms::Button());
+			this->name_in = (gcnew System::Windows::Forms::TextBox());
+			this->surname_in = (gcnew System::Windows::Forms::TextBox());
+			this->document_in = (gcnew System::Windows::Forms::TextBox());
+			this->is_admin_ask = (gcnew System::Windows::Forms::CheckBox());
+			this->gendre_input = (gcnew System::Windows::Forms::ComboBox());
+			this->cancel_query_btn = (gcnew System::Windows::Forms::Button());
+			this->make_query_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -134,6 +170,7 @@ namespace StockViewer {
 			this->document->Name = L"document";
 			this->document->Size = System::Drawing::Size(327, 23);
 			this->document->TabIndex = 3;
+			this->document->TextChanged += gcnew System::EventHandler(this, &UpdateUserUI::document_TextChanged);
 			// 
 			// search_user
 			// 
@@ -179,6 +216,279 @@ namespace StockViewer {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Search user";
 			// 
+			// result_txt
+			// 
+			this->result_txt->AutoSize = true;
+			this->result_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->result_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->result_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->result_txt->Location = System::Drawing::Point(21, 304);
+			this->result_txt->Name = L"result_txt";
+			this->result_txt->Size = System::Drawing::Size(81, 24);
+			this->result_txt->TabIndex = 12;
+			this->result_txt->Text = L"Result: ";
+			// 
+			// gendre_txt
+			// 
+			this->gendre_txt->AutoSize = true;
+			this->gendre_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->gendre_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->gendre_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->gendre_txt->Location = System::Drawing::Point(21, 472);
+			this->gendre_txt->Name = L"gendre_txt";
+			this->gendre_txt->Size = System::Drawing::Size(89, 24);
+			this->gendre_txt->TabIndex = 13;
+			this->gendre_txt->Text = L"Gendre";
+			// 
+			// document_txt
+			// 
+			this->document_txt->AutoSize = true;
+			this->document_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->document_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->document_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->document_txt->Location = System::Drawing::Point(21, 439);
+			this->document_txt->Name = L"document_txt";
+			this->document_txt->Size = System::Drawing::Size(122, 24);
+			this->document_txt->TabIndex = 14;
+			this->document_txt->Text = L"Document";
+			// 
+			// surname_txt
+			// 
+			this->surname_txt->AutoSize = true;
+			this->surname_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->surname_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->surname_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->surname_txt->Location = System::Drawing::Point(21, 405);
+			this->surname_txt->Name = L"surname_txt";
+			this->surname_txt->Size = System::Drawing::Size(101, 24);
+			this->surname_txt->TabIndex = 15;
+			this->surname_txt->Text = L"Surname";
+			// 
+			// name_txt
+			// 
+			this->name_txt->AutoSize = true;
+			this->name_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->name_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->name_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->name_txt->Location = System::Drawing::Point(21, 375);
+			this->name_txt->Name = L"name_txt";
+			this->name_txt->Size = System::Drawing::Size(75, 24);
+			this->name_txt->TabIndex = 16;
+			this->name_txt->Text = L"Name";
+			// 
+			// is_admin_txt
+			// 
+			this->is_admin_txt->AutoSize = true;
+			this->is_admin_txt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->is_admin_txt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->is_admin_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->is_admin_txt->Location = System::Drawing::Point(21, 505);
+			this->is_admin_txt->Name = L"is_admin_txt";
+			this->is_admin_txt->Size = System::Drawing::Size(106, 24);
+			this->is_admin_txt->TabIndex = 17;
+			this->is_admin_txt->Text = L"Is admin\?";
+			// 
+			// name_label
+			// 
+			this->name_label->AutoSize = true;
+			this->name_label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->name_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->name_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->name_label->Location = System::Drawing::Point(163, 367);
+			this->name_label->Name = L"name_label";
+			this->name_label->Size = System::Drawing::Size(0, 24);
+			this->name_label->TabIndex = 18;
+			// 
+			// surname_label
+			// 
+			this->surname_label->AutoSize = true;
+			this->surname_label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->surname_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->surname_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->surname_label->Location = System::Drawing::Point(163, 402);
+			this->surname_label->Name = L"surname_label";
+			this->surname_label->Size = System::Drawing::Size(0, 24);
+			this->surname_label->TabIndex = 19;
+			// 
+			// document_label
+			// 
+			this->document_label->AutoSize = true;
+			this->document_label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->document_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->document_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->document_label->Location = System::Drawing::Point(163, 436);
+			this->document_label->Name = L"document_label";
+			this->document_label->Size = System::Drawing::Size(0, 24);
+			this->document_label->TabIndex = 20;
+			// 
+			// gendre_label
+			// 
+			this->gendre_label->AutoSize = true;
+			this->gendre_label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->gendre_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->gendre_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->gendre_label->Location = System::Drawing::Point(163, 469);
+			this->gendre_label->Name = L"gendre_label";
+			this->gendre_label->Size = System::Drawing::Size(0, 24);
+			this->gendre_label->TabIndex = 21;
+			// 
+			// is_admin_label
+			// 
+			this->is_admin_label->AutoSize = true;
+			this->is_admin_label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->is_admin_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->is_admin_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->is_admin_label->Location = System::Drawing::Point(163, 502);
+			this->is_admin_label->Name = L"is_admin_label";
+			this->is_admin_label->Size = System::Drawing::Size(0, 24);
+			this->is_admin_label->TabIndex = 22;
+			// 
+			// edit_user_btn
+			// 
+			this->edit_user_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->edit_user_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->edit_user_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->edit_user_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->edit_user_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->edit_user_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->edit_user_btn->Location = System::Drawing::Point(25, 556);
+			this->edit_user_btn->Name = L"edit_user_btn";
+			this->edit_user_btn->Size = System::Drawing::Size(175, 70);
+			this->edit_user_btn->TabIndex = 23;
+			this->edit_user_btn->Text = L"Edit";
+			this->edit_user_btn->UseVisualStyleBackColor = true;
+			this->edit_user_btn->Visible = false;
+			this->edit_user_btn->Click += gcnew System::EventHandler(this, &UpdateUserUI::edit_user_btn_Click);
+			// 
+			// name_in
+			// 
+			this->name_in->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->name_in->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->name_in->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->name_in->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->name_in->Location = System::Drawing::Point(381, 367);
+			this->name_in->Name = L"name_in";
+			this->name_in->Size = System::Drawing::Size(327, 23);
+			this->name_in->TabIndex = 24;
+			this->name_in->Visible = false;
+			// 
+			// surname_in
+			// 
+			this->surname_in->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->surname_in->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->surname_in->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->surname_in->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->surname_in->Location = System::Drawing::Point(381, 401);
+			this->surname_in->Name = L"surname_in";
+			this->surname_in->Size = System::Drawing::Size(327, 23);
+			this->surname_in->TabIndex = 25;
+			this->surname_in->Visible = false;
+			// 
+			// document_in
+			// 
+			this->document_in->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->document_in->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->document_in->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->document_in->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->document_in->Location = System::Drawing::Point(381, 435);
+			this->document_in->Name = L"document_in";
+			this->document_in->ReadOnly = true;
+			this->document_in->Size = System::Drawing::Size(327, 23);
+			this->document_in->TabIndex = 26;
+			this->document_in->Visible = false;
+			// 
+			// is_admin_ask
+			// 
+			this->is_admin_ask->AutoSize = true;
+			this->is_admin_ask->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->is_admin_ask->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->is_admin_ask->Location = System::Drawing::Point(380, 506);
+			this->is_admin_ask->Name = L"is_admin_ask";
+			this->is_admin_ask->Size = System::Drawing::Size(89, 21);
+			this->is_admin_ask->TabIndex = 28;
+			this->is_admin_ask->Text = L"Is admin\?";
+			this->is_admin_ask->UseVisualStyleBackColor = true;
+			this->is_admin_ask->Visible = false;
+			// 
+			// gendre_input
+			// 
+			this->gendre_input->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->gendre_input->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->gendre_input->FormattingEnabled = true;
+			this->gendre_input->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Male", L"Female", L"Not bin" });
+			this->gendre_input->Location = System::Drawing::Point(381, 474);
+			this->gendre_input->Name = L"gendre_input";
+			this->gendre_input->Size = System::Drawing::Size(121, 21);
+			this->gendre_input->TabIndex = 29;
+			this->gendre_input->Visible = false;
+			// 
+			// cancel_query_btn
+			// 
+			this->cancel_query_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->cancel_query_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->cancel_query_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Maroon;
+			this->cancel_query_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cancel_query_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cancel_query_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->cancel_query_btn->Location = System::Drawing::Point(334, 556);
+			this->cancel_query_btn->Name = L"cancel_query_btn";
+			this->cancel_query_btn->Size = System::Drawing::Size(190, 70);
+			this->cancel_query_btn->TabIndex = 30;
+			this->cancel_query_btn->Text = L"Cancel update";
+			this->cancel_query_btn->UseVisualStyleBackColor = true;
+			this->cancel_query_btn->Visible = false;
+			this->cancel_query_btn->Click += gcnew System::EventHandler(this, &UpdateUserUI::cancel_query_btn_Click);
+			// 
+			// make_query_btn
+			// 
+			this->make_query_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->make_query_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::SpringGreen;
+			this->make_query_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aquamarine;
+			this->make_query_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->make_query_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->make_query_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->make_query_btn->Location = System::Drawing::Point(530, 556);
+			this->make_query_btn->Name = L"make_query_btn";
+			this->make_query_btn->Size = System::Drawing::Size(175, 70);
+			this->make_query_btn->TabIndex = 31;
+			this->make_query_btn->Text = L"Update user";
+			this->make_query_btn->UseVisualStyleBackColor = true;
+			this->make_query_btn->Visible = false;
+			this->make_query_btn->Click += gcnew System::EventHandler(this, &UpdateUserUI::make_query_btn_Click);
+			// 
 			// UpdateUserUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -186,6 +496,25 @@ namespace StockViewer {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->ClientSize = System::Drawing::Size(720, 629);
+			this->Controls->Add(this->make_query_btn);
+			this->Controls->Add(this->cancel_query_btn);
+			this->Controls->Add(this->gendre_input);
+			this->Controls->Add(this->is_admin_ask);
+			this->Controls->Add(this->document_in);
+			this->Controls->Add(this->surname_in);
+			this->Controls->Add(this->name_in);
+			this->Controls->Add(this->edit_user_btn);
+			this->Controls->Add(this->is_admin_label);
+			this->Controls->Add(this->gendre_label);
+			this->Controls->Add(this->document_label);
+			this->Controls->Add(this->surname_label);
+			this->Controls->Add(this->name_label);
+			this->Controls->Add(this->is_admin_txt);
+			this->Controls->Add(this->name_txt);
+			this->Controls->Add(this->surname_txt);
+			this->Controls->Add(this->document_txt);
+			this->Controls->Add(this->gendre_txt);
+			this->Controls->Add(this->result_txt);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
@@ -198,9 +527,11 @@ namespace StockViewer {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
+
 	public: void to_grid() {
 		this->database_data->open_session();
 		this->dataGridView1->DataSource = this->database_data->get_data(get_query(this->document->Text));
@@ -215,11 +546,24 @@ namespace StockViewer {
 		else {
 		}
 	}
+	public: void query_result() {
+		this->result_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->name_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->surname_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->document_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->gendre_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->is_admin_txt->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+		this->edit_user_btn->Visible = true;
+		this->edit_user_btn->Enabled = true;
+		
+	}
 	private: System::Void search_user_Click(System::Object^ sender, System::EventArgs^ e) {
+		query_result();
 		to_grid();
 		if (this->dataGridView1->RowCount == 1) {
 			this->user_founded, this->user_selected = false;
-			this->document->Text = L"Document not founded on database!";
+			this->document->Text = L" Document not founded on database!";
+			this->document->ForeColor = System::Drawing::Color::DarkRed;
 		}
 		else {
 			this->user_founded = true;
@@ -227,6 +571,27 @@ namespace StockViewer {
 	}
 	private: System::Void dataGridView1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		 
+	}
+	private: System::Void document_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->document->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+	}
+	private: System::Void edit_user_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->name_in->Visible = true;
+		this->surname_in->Visible = true;
+		this->gendre_input->Visible = true;
+		this->document_in->Visible = true;
+		this->is_admin_ask->Visible = true;
+		this->edit_user_btn->Enabled = false;
+		this->edit_user_btn->Visible = false;
+		this->cancel_query_btn->Visible = true;
+		this->make_query_btn->Visible = true;
+		this->document_in->Text = this->document->Text;
+	}
+	private: System::Void cancel_query_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void make_query_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		//MAKE QUERY
 	}
 };
 }
