@@ -33,7 +33,7 @@ DataTable^ DataBase::get_data(String^ _query) {
 		data_adapter->Fill(table);
 	}
 	catch (Exception^ db_exception) {
-		MessageBox::Show("Could not connect to database. \nMake shure it's enabled an running");
+		MessageBox::Show("Could not connect to database. \nMake shure it's enabled and running");
 	}
 	return table;
 }

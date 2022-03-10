@@ -236,7 +236,7 @@ namespace StockViewer {
 #pragma endregion
 	public: void to_grid() {
 		this->database_data->open_session();
-		this->dataGridView1->DataSource = this->database_data->get_data(get_query(this->document->Text));
+		this->dataGridView1->DataSource = this->database_data->get_data(get_query_users(this->document->Text));
 		this->database_data->close_session();
 	}
 

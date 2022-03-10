@@ -39,7 +39,8 @@ namespace StockViewer {
 	private: System::Windows::Forms::Button^ sell_btn;
 	private: System::Windows::Forms::Panel^ panel5;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+    private: System::Windows::Forms::Button^ add_item_btn;
+
     private: System::Windows::Forms::Panel^ panel6;
     private: System::Windows::Forms::Label^ label6;
     private: System::Windows::Forms::Label^ label5;
@@ -78,10 +79,10 @@ namespace StockViewer {
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->panel5 = (gcnew System::Windows::Forms::Panel());
-            this->button1 = (gcnew System::Windows::Forms::Button());
-            this->button2 = (gcnew System::Windows::Forms::Button());
-            this->document = (gcnew System::Windows::Forms::TextBox());
             this->label7 = (gcnew System::Windows::Forms::Label());
+            this->document = (gcnew System::Windows::Forms::TextBox());
+            this->button1 = (gcnew System::Windows::Forms::Button());
+            this->add_item_btn = (gcnew System::Windows::Forms::Button());
             this->panel1->SuspendLayout();
             this->panel2->SuspendLayout();
             this->panel3->SuspendLayout();
@@ -396,12 +397,37 @@ namespace StockViewer {
             this->panel5->Controls->Add(this->label7);
             this->panel5->Controls->Add(this->document);
             this->panel5->Controls->Add(this->button1);
-            this->panel5->Controls->Add(this->button2);
+            this->panel5->Controls->Add(this->add_item_btn);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Top;
             this->panel5->Location = System::Drawing::Point(0, 0);
             this->panel5->Name = L"panel5";
             this->panel5->Size = System::Drawing::Size(719, 88);
             this->panel5->TabIndex = 0;
+            // 
+            // label7
+            // 
+            this->label7->AutoSize = true;
+            this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->label7->Location = System::Drawing::Point(30, 37);
+            this->label7->Name = L"label7";
+            this->label7->Size = System::Drawing::Size(72, 24);
+            this->label7->TabIndex = 8;
+            this->label7->Text = L"CODE";
+            // 
+            // document
+            // 
+            this->document->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+                static_cast<System::Int32>(static_cast<System::Byte>(25)));
+            this->document->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+            this->document->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->document->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->document->Location = System::Drawing::Point(131, 29);
+            this->document->Name = L"document";
+            this->document->Size = System::Drawing::Size(327, 37);
+            this->document->TabIndex = 7;
             // 
             // button1
             // 
@@ -423,49 +449,24 @@ namespace StockViewer {
             this->button1->UseVisualStyleBackColor = true;
             this->button1->Click += gcnew System::EventHandler(this, &SalesUI::button1_Click);
             // 
-            // button2
+            // add_item_btn
             // 
-            this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
-            this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->button2->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+            this->add_item_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"add_item_btn.BackgroundImage")));
+            this->add_item_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+            this->add_item_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
                 static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-            this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::SpringGreen;
-            this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aquamarine;
-            this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->add_item_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::SpringGreen;
+            this->add_item_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aquamarine;
+            this->add_item_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->add_item_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->button2->Location = System::Drawing::Point(628, 8);
-            this->button2->Name = L"button2";
-            this->button2->Size = System::Drawing::Size(82, 70);
-            this->button2->TabIndex = 5;
-            this->button2->UseVisualStyleBackColor = true;
-            this->button2->Click += gcnew System::EventHandler(this, &SalesUI::button2_Click);
-            // 
-            // document
-            // 
-            this->document->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
-                static_cast<System::Int32>(static_cast<System::Byte>(25)));
-            this->document->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-            this->document->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->document->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->document->Location = System::Drawing::Point(131, 29);
-            this->document->Name = L"document";
-            this->document->Size = System::Drawing::Size(327, 37);
-            this->document->TabIndex = 7;
-            // 
-            // label7
-            // 
-            this->label7->AutoSize = true;
-            this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->label7->Location = System::Drawing::Point(30, 37);
-            this->label7->Name = L"label7";
-            this->label7->Size = System::Drawing::Size(72, 24);
-            this->label7->TabIndex = 8;
-            this->label7->Text = L"CODE";
+            this->add_item_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->add_item_btn->Location = System::Drawing::Point(628, 8);
+            this->add_item_btn->Name = L"add_item_btn";
+            this->add_item_btn->Size = System::Drawing::Size(82, 70);
+            this->add_item_btn->TabIndex = 5;
+            this->add_item_btn->UseVisualStyleBackColor = true;
+            this->add_item_btn->Click += gcnew System::EventHandler(this, &SalesUI::add_item_btn_Click);
             // 
             // SalesUI
             // 
@@ -501,7 +502,8 @@ private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::Even
 }
 private: System::Void add_discount_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void add_item_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+
     this->checkedListBox1->Items->Add("String",true);
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

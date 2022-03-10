@@ -238,7 +238,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->gendre_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->gendre_txt->Location = System::Drawing::Point(21, 472);
+			this->gendre_txt->Location = System::Drawing::Point(28, 467);
 			this->gendre_txt->Name = L"gendre_txt";
 			this->gendre_txt->Size = System::Drawing::Size(89, 24);
 			this->gendre_txt->TabIndex = 13;
@@ -252,7 +252,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->document_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->document_txt->Location = System::Drawing::Point(21, 439);
+			this->document_txt->Location = System::Drawing::Point(28, 434);
 			this->document_txt->Name = L"document_txt";
 			this->document_txt->Size = System::Drawing::Size(122, 24);
 			this->document_txt->TabIndex = 14;
@@ -266,7 +266,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->surname_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->surname_txt->Location = System::Drawing::Point(21, 405);
+			this->surname_txt->Location = System::Drawing::Point(28, 400);
 			this->surname_txt->Name = L"surname_txt";
 			this->surname_txt->Size = System::Drawing::Size(101, 24);
 			this->surname_txt->TabIndex = 15;
@@ -280,7 +280,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->name_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->name_txt->Location = System::Drawing::Point(21, 375);
+			this->name_txt->Location = System::Drawing::Point(28, 370);
 			this->name_txt->Name = L"name_txt";
 			this->name_txt->Size = System::Drawing::Size(75, 24);
 			this->name_txt->TabIndex = 16;
@@ -294,7 +294,7 @@ namespace StockViewer {
 				static_cast<System::Byte>(0)));
 			this->is_admin_txt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->is_admin_txt->Location = System::Drawing::Point(21, 505);
+			this->is_admin_txt->Location = System::Drawing::Point(28, 500);
 			this->is_admin_txt->Name = L"is_admin_txt";
 			this->is_admin_txt->Size = System::Drawing::Size(106, 24);
 			this->is_admin_txt->TabIndex = 17;
@@ -307,7 +307,7 @@ namespace StockViewer {
 			this->name_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->name_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->name_label->Location = System::Drawing::Point(163, 367);
+			this->name_label->Location = System::Drawing::Point(163, 364);
 			this->name_label->Name = L"name_label";
 			this->name_label->Size = System::Drawing::Size(0, 24);
 			this->name_label->TabIndex = 18;
@@ -319,7 +319,7 @@ namespace StockViewer {
 			this->surname_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->surname_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->surname_label->Location = System::Drawing::Point(163, 402);
+			this->surname_label->Location = System::Drawing::Point(163, 399);
 			this->surname_label->Name = L"surname_label";
 			this->surname_label->Size = System::Drawing::Size(0, 24);
 			this->surname_label->TabIndex = 19;
@@ -331,7 +331,7 @@ namespace StockViewer {
 			this->document_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->document_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->document_label->Location = System::Drawing::Point(163, 436);
+			this->document_label->Location = System::Drawing::Point(163, 433);
 			this->document_label->Name = L"document_label";
 			this->document_label->Size = System::Drawing::Size(0, 24);
 			this->document_label->TabIndex = 20;
@@ -343,7 +343,7 @@ namespace StockViewer {
 			this->gendre_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gendre_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->gendre_label->Location = System::Drawing::Point(163, 469);
+			this->gendre_label->Location = System::Drawing::Point(163, 466);
 			this->gendre_label->Name = L"gendre_label";
 			this->gendre_label->Size = System::Drawing::Size(0, 24);
 			this->gendre_label->TabIndex = 21;
@@ -355,7 +355,7 @@ namespace StockViewer {
 			this->is_admin_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->is_admin_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->is_admin_label->Location = System::Drawing::Point(163, 502);
+			this->is_admin_label->Location = System::Drawing::Point(163, 499);
 			this->is_admin_label->Name = L"is_admin_label";
 			this->is_admin_label->Size = System::Drawing::Size(0, 24);
 			this->is_admin_label->TabIndex = 22;
@@ -521,6 +521,7 @@ namespace StockViewer {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"UpdateUserUI";
 			this->Text = L"UpdateUser";
+			this->Load += gcnew System::EventHandler(this, &UpdateUserUI::UpdateUserUI_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
@@ -534,7 +535,7 @@ namespace StockViewer {
 
 	public: void to_grid() {
 		this->database_data->open_session();
-		this->dataGridView1->DataSource = this->database_data->get_data(get_query(this->document->Text));
+		this->dataGridView1->DataSource = this->database_data->get_data(get_query_users(this->document->Text));
 		this->database_data->close_session();
 	}
 	public: void make_update() {
@@ -567,7 +568,13 @@ namespace StockViewer {
 		}
 		else {
 			this->user_founded = true;
+			if (this->dataGridView1->RowCount > 2) {
+				this->result_txt->Text = "More than one result found";
+				this->result_txt->ForeColor = System::Drawing::Color::DarkRed;
+
+			}
 		}
+
 	}
 	private: System::Void dataGridView1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		 
@@ -593,5 +600,8 @@ namespace StockViewer {
 	private: System::Void make_query_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//MAKE QUERY
 	}
+private: System::Void UpdateUserUI_Load(System::Object^ sender, System::EventArgs^ e) {
+	
+}
 };
 }
