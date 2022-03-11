@@ -247,6 +247,7 @@ Class StockViewer.UpdateUserUI: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    get_update_query(): PrivateScope, Public, HideBySig
     to_grid(): PrivateScope, Public, HideBySig
     make_update(): PrivateScope, Public, HideBySig
     query_result(): PrivateScope, Public, HideBySig

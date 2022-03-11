@@ -12,7 +12,6 @@ E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.CreateUser
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SalesUI.resources
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SVMainUI.resources
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.GenerateResource.cache
-E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.AssemblyReference.cache
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.SearchUserUI.resources
 E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.exe.config
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.exe.config

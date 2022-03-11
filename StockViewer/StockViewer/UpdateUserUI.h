@@ -18,6 +18,7 @@ namespace StockViewer {
 			InitializeComponent();
 			database_data = gcnew DataBase("datasource=localhost; username=root; password=""; database=svlocal;");
 			user_founded, user_selected = false;
+			set_name, set_surname, set_gendre, set_admin = false;
 		}
 	protected:
 		~UpdateUserUI()
@@ -52,17 +53,21 @@ namespace StockViewer {
 	private: System::Windows::Forms::TextBox^ name_in;
 	private: System::Windows::Forms::TextBox^ surname_in;
 	private: System::Windows::Forms::TextBox^ document_in;
-	private: System::Windows::Forms::CheckBox^ is_admin_ask;
-	private: System::Windows::Forms::ComboBox^ gendre_input;
+	private: System::Windows::Forms::CheckBox^ admin_in;
+
+	private: System::Windows::Forms::ComboBox^ gendre_in;
+
 	private: System::Windows::Forms::Button^ cancel_query_btn;
 	private: System::Windows::Forms::Button^ make_query_btn;
 	private: System::Windows::Forms::Label^ is_admin_label;
+	// QUERY MODIFIERS
+	private: bool set_name, set_surname, set_gendre, set_admin;
 
 #pragma region 
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -85,8 +90,8 @@ namespace StockViewer {
 			this->name_in = (gcnew System::Windows::Forms::TextBox());
 			this->surname_in = (gcnew System::Windows::Forms::TextBox());
 			this->document_in = (gcnew System::Windows::Forms::TextBox());
-			this->is_admin_ask = (gcnew System::Windows::Forms::CheckBox());
-			this->gendre_input = (gcnew System::Windows::Forms::ComboBox());
+			this->admin_in = (gcnew System::Windows::Forms::CheckBox());
+			this->gendre_in = (gcnew System::Windows::Forms::ComboBox());
 			this->cancel_query_btn = (gcnew System::Windows::Forms::Button());
 			this->make_query_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -99,27 +104,27 @@ namespace StockViewer {
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::ControlDarkDark;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::ControlDarkDark;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::ControlDarkDark;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::ControlDarkDark;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle4;
 			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->dataGridView1->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
@@ -307,7 +312,7 @@ namespace StockViewer {
 			this->name_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->name_label->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->name_label->Location = System::Drawing::Point(163, 364);
+			this->name_label->Location = System::Drawing::Point(163, 368);
 			this->name_label->Name = L"name_label";
 			this->name_label->Size = System::Drawing::Size(0, 24);
 			this->name_label->TabIndex = 18;
@@ -394,6 +399,7 @@ namespace StockViewer {
 			this->name_in->Size = System::Drawing::Size(327, 23);
 			this->name_in->TabIndex = 24;
 			this->name_in->Visible = false;
+			this->name_in->TextChanged += gcnew System::EventHandler(this, &UpdateUserUI::name_in_TextChanged);
 			// 
 			// surname_in
 			// 
@@ -408,6 +414,7 @@ namespace StockViewer {
 			this->surname_in->Size = System::Drawing::Size(327, 23);
 			this->surname_in->TabIndex = 25;
 			this->surname_in->Visible = false;
+			this->surname_in->TextChanged += gcnew System::EventHandler(this, &UpdateUserUI::surname_in_TextChanged);
 			// 
 			// document_in
 			// 
@@ -424,31 +431,31 @@ namespace StockViewer {
 			this->document_in->TabIndex = 26;
 			this->document_in->Visible = false;
 			// 
-			// is_admin_ask
+			// admin_in
 			// 
-			this->is_admin_ask->AutoSize = true;
-			this->is_admin_ask->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->admin_in->AutoSize = true;
+			this->admin_in->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->is_admin_ask->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->is_admin_ask->Location = System::Drawing::Point(380, 506);
-			this->is_admin_ask->Name = L"is_admin_ask";
-			this->is_admin_ask->Size = System::Drawing::Size(89, 21);
-			this->is_admin_ask->TabIndex = 28;
-			this->is_admin_ask->Text = L"Is admin\?";
-			this->is_admin_ask->UseVisualStyleBackColor = true;
-			this->is_admin_ask->Visible = false;
+			this->admin_in->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->admin_in->Location = System::Drawing::Point(380, 506);
+			this->admin_in->Name = L"admin_in";
+			this->admin_in->Size = System::Drawing::Size(89, 21);
+			this->admin_in->TabIndex = 28;
+			this->admin_in->Text = L"Is admin\?";
+			this->admin_in->UseVisualStyleBackColor = true;
+			this->admin_in->Visible = false;
 			// 
-			// gendre_input
+			// gendre_in
 			// 
-			this->gendre_input->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->gendre_input->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->gendre_input->FormattingEnabled = true;
-			this->gendre_input->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Male", L"Female", L"Not bin" });
-			this->gendre_input->Location = System::Drawing::Point(381, 474);
-			this->gendre_input->Name = L"gendre_input";
-			this->gendre_input->Size = System::Drawing::Size(121, 21);
-			this->gendre_input->TabIndex = 29;
-			this->gendre_input->Visible = false;
+			this->gendre_in->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->gendre_in->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->gendre_in->FormattingEnabled = true;
+			this->gendre_in->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Male", L"Female", L"Not bin" });
+			this->gendre_in->Location = System::Drawing::Point(381, 474);
+			this->gendre_in->Name = L"gendre_in";
+			this->gendre_in->Size = System::Drawing::Size(121, 21);
+			this->gendre_in->TabIndex = 29;
+			this->gendre_in->Visible = false;
 			// 
 			// cancel_query_btn
 			// 
@@ -498,8 +505,8 @@ namespace StockViewer {
 			this->ClientSize = System::Drawing::Size(720, 629);
 			this->Controls->Add(this->make_query_btn);
 			this->Controls->Add(this->cancel_query_btn);
-			this->Controls->Add(this->gendre_input);
-			this->Controls->Add(this->is_admin_ask);
+			this->Controls->Add(this->gendre_in);
+			this->Controls->Add(this->admin_in);
 			this->Controls->Add(this->document_in);
 			this->Controls->Add(this->surname_in);
 			this->Controls->Add(this->name_in);
@@ -533,6 +540,45 @@ namespace StockViewer {
 		}
 #pragma endregion
 
+	public: String^ get_update_query() {
+		String^ query = "";
+		String^ c = "'";
+		String^ s = " ";
+		String^ eq = "= ";
+		String^ co = "";
+		int conditions = 0;
+
+		if (this->set_name && this->name_in->Text != "") {
+			conditions += 1;
+			query = query + "name " + eq + c + this->name_in->Text + c + s;
+		}
+		if (this->set_surname && this->surname_in->Text != "") {
+			if (conditions > 0) {
+				co = ",";
+			}
+			conditions += 1;
+			query = query + co + " surname " + eq + c + this->surname_in->Text + c + s;
+		}
+		if (this->set_gendre) {
+			if (conditions > 0) {
+				co = ",";
+			}
+			conditions += 1;
+			query = query + co +" gendre " + eq + c + this->gendre_in->Text + c + s;
+		}
+		if (this->set_admin) {
+			if (conditions > 0) {
+				co = ",";
+			}
+			conditions += 1;
+			query = query + co + " admin " + eq + c + this->admin_in->Checked.ToString() + c + s;
+		}
+
+		query = query + "where document " + eq + c + this->dataGridView1->CurrentRow->Cells[2]->Value->ToString() + c + s;
+
+		return query;
+	}
+
 	public: void to_grid() {
 		this->database_data->open_session();
 		this->dataGridView1->DataSource = this->database_data->get_data(get_query_users(this->document->Text));
@@ -559,7 +605,6 @@ namespace StockViewer {
 		
 	}
 	private: System::Void search_user_Click(System::Object^ sender, System::EventArgs^ e) {
-		query_result();
 		to_grid();
 		if (this->dataGridView1->RowCount == 1) {
 			this->user_founded, this->user_selected = false;
@@ -567,13 +612,19 @@ namespace StockViewer {
 			this->document->ForeColor = System::Drawing::Color::DarkRed;
 		}
 		else {
+			query_result();
 			this->user_founded = true;
+			this->name_label->Text = dataGridView1->CurrentRow->Cells[0]->Value->ToString();
+			this->surname_label->Text = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
+			this->document_label->Text = dataGridView1->CurrentRow->Cells[2]->Value->ToString();
+			this->gendre_label->Text = dataGridView1->CurrentRow->Cells[3]->Value->ToString();
+			this->is_admin_label->Text = dataGridView1->CurrentRow->Cells[4]->Value->ToString();
 			if (this->dataGridView1->RowCount > 2) {
 				this->result_txt->Text = "More than one result found";
 				this->result_txt->ForeColor = System::Drawing::Color::DarkRed;
-
 			}
 		}
+
 
 	}
 	private: System::Void dataGridView1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -583,25 +634,39 @@ namespace StockViewer {
 		this->document->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 	}
 	private: System::Void edit_user_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->name_in->Visible = true;
-		this->surname_in->Visible = true;
-		this->gendre_input->Visible = true;
-		this->document_in->Visible = true;
-		this->is_admin_ask->Visible = true;
-		this->edit_user_btn->Enabled = false;
-		this->edit_user_btn->Visible = false;
-		this->cancel_query_btn->Visible = true;
-		this->make_query_btn->Visible = true;
-		this->document_in->Text = this->document->Text;
+			if (this->dataGridView1->RowCount > 1) {
+				this->cancel_query_btn->Visible = true;
+				this->make_query_btn->Visible = true;
+				this->document_in->Text = dataGridView1->CurrentRow->Cells[2]->Value->ToString();
+				this->name_in->Visible = true;
+				this->surname_in->Visible = true;
+				this->gendre_in->Visible = true;
+				this->document_in->Visible = true;
+				this->admin_in->Visible = true;
+				this->edit_user_btn->Enabled = false;
+				this->edit_user_btn->Visible = true;
+				this->document->Enabled = false;
+				this->search_user->Enabled = false;
+			}
 	}
 	private: System::Void cancel_query_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 	private: System::Void make_query_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//MAKE QUERY
+		database_data->open_session();
+		String^ error_db = database_data->update_database("users set ", get_update_query());
+		MessageBox::Show(error_db);
+		database_data->close_session();
 	}
-private: System::Void UpdateUserUI_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void UpdateUserUI_Load(System::Object^ sender, System::EventArgs^ e) {
 	
-}
+	}
+	private: System::Void name_in_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->set_name = true;
+	}
+	private: System::Void surname_in_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->set_surname = true;
+	}
 };
 }

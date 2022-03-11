@@ -33,13 +33,13 @@ DataTable^ DataBase::get_data(String^ _query) {
 		data_adapter->Fill(table);
 	}
 	catch (Exception^ db_exception) {
-		MessageBox::Show("Could not connect to database. \nMake shure it's enabled and running");
+		MessageBox::Show("Could not connect to database. \nMake shure it's enabled and running \n" + db_exception->Message);
 	}
 	return table;
 }
 
-String^ DataBase::dump_to_database(String^ db, String^ _query){
-	String^ query = "insert into " + db + " values (" + _query + ")";
+String^ DataBase::dump_to_database(String^ _db, String^ _query){
+	String^ query = "insert into " + _db + " values (" + _query + ")";
 	MySqlCommand^ command = gcnew MySqlCommand(query, this->database_connector);
 	try {
 		command->ExecuteNonQuery();
@@ -50,4 +50,23 @@ String^ DataBase::dump_to_database(String^ db, String^ _query){
 		MessageBox::Show(db_exception->Message);
 		return query;
 	}
+}
+
+String^ DataBase::update_database(String^ _db, String^ _query) {
+	String^ query = "update " + _db + " " + _query;
+	MySqlCommand^ command = gcnew MySqlCommand(query, this->database_connector);
+	try {
+		command->ExecuteNonQuery();
+		return "Done!";
+	}
+	catch (Exception^ db_exception) {
+		MessageBox::Show(db_exception->Message);
+		return query;
+	}
+}
+
+String^ DataBase::delete_database(String^ _db, String^ _query) {
+	//not finished yet
+	String^ query = "delete from svlocal.products WHERE code = '0000002'";
+	return query;
 }
