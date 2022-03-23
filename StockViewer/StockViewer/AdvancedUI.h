@@ -45,6 +45,7 @@ namespace StockViewer {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdvancedUI::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->database_mgm_btn = (gcnew System::Windows::Forms::Button());
 			this->taxes_btn = (gcnew System::Windows::Forms::Button());
 			this->statics_btn = (gcnew System::Windows::Forms::Button());
 			this->add_user_btn = (gcnew System::Windows::Forms::Button());
@@ -52,7 +53,6 @@ namespace StockViewer {
 			this->info_panel = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->cancel_sale_btn = (gcnew System::Windows::Forms::Button());
-			this->database_mgm_btn = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -72,6 +72,28 @@ namespace StockViewer {
 			this->panel1->Size = System::Drawing::Size(289, 729);
 			this->panel1->TabIndex = 1;
 			// 
+			// database_mgm_btn
+			// 
+			this->database_mgm_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"database_mgm_btn.BackgroundImage")));
+			this->database_mgm_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->database_mgm_btn->Dock = System::Windows::Forms::DockStyle::Top;
+			this->database_mgm_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->database_mgm_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->database_mgm_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
+			this->database_mgm_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->database_mgm_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->database_mgm_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->database_mgm_btn->Location = System::Drawing::Point(0, 436);
+			this->database_mgm_btn->Name = L"database_mgm_btn";
+			this->database_mgm_btn->Size = System::Drawing::Size(289, 70);
+			this->database_mgm_btn->TabIndex = 5;
+			this->database_mgm_btn->Text = L"DB Management";
+			this->database_mgm_btn->UseVisualStyleBackColor = true;
+			// 
 			// taxes_btn
 			// 
 			this->taxes_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"taxes_btn.BackgroundImage")));
@@ -87,7 +109,7 @@ namespace StockViewer {
 			this->taxes_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->taxes_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->taxes_btn->Location = System::Drawing::Point(0, 402);
+			this->taxes_btn->Location = System::Drawing::Point(0, 366);
 			this->taxes_btn->Name = L"taxes_btn";
 			this->taxes_btn->Size = System::Drawing::Size(289, 70);
 			this->taxes_btn->TabIndex = 4;
@@ -109,7 +131,7 @@ namespace StockViewer {
 			this->statics_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->statics_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->statics_btn->Location = System::Drawing::Point(0, 332);
+			this->statics_btn->Location = System::Drawing::Point(0, 296);
 			this->statics_btn->Name = L"statics_btn";
 			this->statics_btn->Size = System::Drawing::Size(289, 70);
 			this->statics_btn->TabIndex = 3;
@@ -131,7 +153,7 @@ namespace StockViewer {
 			this->add_user_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->add_user_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->add_user_btn->Location = System::Drawing::Point(0, 262);
+			this->add_user_btn->Location = System::Drawing::Point(0, 226);
 			this->add_user_btn->Name = L"add_user_btn";
 			this->add_user_btn->Size = System::Drawing::Size(289, 70);
 			this->add_user_btn->TabIndex = 2;
@@ -146,7 +168,7 @@ namespace StockViewer {
 			this->panel4->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel4->Location = System::Drawing::Point(0, 0);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(289, 262);
+			this->panel4->Size = System::Drawing::Size(289, 226);
 			this->panel4->TabIndex = 0;
 			// 
 			// info_panel
@@ -188,28 +210,6 @@ namespace StockViewer {
 			this->cancel_sale_btn->Text = L"Cancel";
 			this->cancel_sale_btn->UseVisualStyleBackColor = true;
 			this->cancel_sale_btn->Click += gcnew System::EventHandler(this, &AdvancedUI::cancel_sale_btn_Click);
-			// 
-			// database_mgm_btn
-			// 
-			this->database_mgm_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"database_mgm_btn.BackgroundImage")));
-			this->database_mgm_btn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->database_mgm_btn->Dock = System::Windows::Forms::DockStyle::Top;
-			this->database_mgm_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			this->database_mgm_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->database_mgm_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->database_mgm_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->database_mgm_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->database_mgm_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->database_mgm_btn->Location = System::Drawing::Point(0, 472);
-			this->database_mgm_btn->Name = L"database_mgm_btn";
-			this->database_mgm_btn->Size = System::Drawing::Size(289, 70);
-			this->database_mgm_btn->TabIndex = 5;
-			this->database_mgm_btn->Text = L"DB Management";
-			this->database_mgm_btn->UseVisualStyleBackColor = true;
 			// 
 			// AdvancedUI
 			// 

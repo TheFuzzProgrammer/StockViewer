@@ -612,16 +612,24 @@ namespace StockViewer {
 			this->document->ForeColor = System::Drawing::Color::DarkRed;
 		}
 		else {
-			query_result();
-			this->user_founded = true;
-			this->name_label->Text = dataGridView1->CurrentRow->Cells[0]->Value->ToString();
-			this->surname_label->Text = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
-			this->document_label->Text = dataGridView1->CurrentRow->Cells[2]->Value->ToString();
-			this->gendre_label->Text = dataGridView1->CurrentRow->Cells[3]->Value->ToString();
-			this->is_admin_label->Text = dataGridView1->CurrentRow->Cells[4]->Value->ToString();
-			if (this->dataGridView1->RowCount > 2) {
-				this->result_txt->Text = "More than one result found";
-				this->result_txt->ForeColor = System::Drawing::Color::DarkRed;
+			
+			try {
+				if (this->dataGridView1->RowCount > 0) {
+					query_result();
+					this->user_founded = true;
+					this->name_label->Text = dataGridView1->CurrentRow->Cells[0]->Value->ToString();
+					this->surname_label->Text = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
+					this->document_label->Text = dataGridView1->CurrentRow->Cells[2]->Value->ToString();
+					this->gendre_label->Text = dataGridView1->CurrentRow->Cells[3]->Value->ToString();
+					this->is_admin_label->Text = dataGridView1->CurrentRow->Cells[4]->Value->ToString();
+				}
+				if (this->dataGridView1->RowCount > 2) {
+					this->result_txt->Text = "More than one result found";
+					this->result_txt->ForeColor = System::Drawing::Color::DarkRed;
+				}
+			}
+			catch (Exception^ error) {
+				MessageBox::Show(error->Message);
 			}
 		}
 

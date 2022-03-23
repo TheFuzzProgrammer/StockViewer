@@ -1,6 +1,7 @@
 #pragma once
 #include "SalesUI.h"
 #include "AdvancedUI.h"
+#include "ProductsUI.h"
 
 using namespace std;
 
@@ -40,6 +41,11 @@ namespace StockViewer {
 	private: System::Windows::Forms::Button^ product_mng_btn;
 	private: System::Windows::Forms::Button^ new_sale_btn;
 	private: System::Windows::Forms::Panel^ uplimiter_panel;
+	private: System::Windows::Forms::Panel^ info_panel;
+
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Button^ cancel_btn;
+
 	private:
 		System::ComponentModel::Container ^components;
 
@@ -49,6 +55,9 @@ namespace StockViewer {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SVMainUI::typeid));
 			this->container_panel = (gcnew System::Windows::Forms::Panel());
+			this->info_panel = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->cancel_btn = (gcnew System::Windows::Forms::Button());
 			this->btn_container = (gcnew System::Windows::Forms::Panel());
 			this->advanced_btn = (gcnew System::Windows::Forms::Button());
 			this->search_product_btn = (gcnew System::Windows::Forms::Button());
@@ -56,6 +65,7 @@ namespace StockViewer {
 			this->new_sale_btn = (gcnew System::Windows::Forms::Button());
 			this->uplimiter_panel = (gcnew System::Windows::Forms::Panel());
 			this->container_panel->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->btn_container->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -64,12 +74,53 @@ namespace StockViewer {
 			this->container_panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->container_panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->container_panel->Controls->Add(this->info_panel);
+			this->container_panel->Controls->Add(this->panel2);
 			this->container_panel->Controls->Add(this->btn_container);
 			this->container_panel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->container_panel->Location = System::Drawing::Point(0, 0);
 			this->container_panel->Name = L"container_panel";
 			this->container_panel->Size = System::Drawing::Size(1008, 729);
 			this->container_panel->TabIndex = 2;
+			// 
+			// info_panel
+			// 
+			this->info_panel->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->info_panel->Location = System::Drawing::Point(289, 0);
+			this->info_panel->Name = L"info_panel";
+			this->info_panel->Size = System::Drawing::Size(719, 629);
+			this->info_panel->TabIndex = 5;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->panel2->Controls->Add(this->cancel_btn);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->panel2->Location = System::Drawing::Point(289, 629);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(719, 100);
+			this->panel2->TabIndex = 4;
+			// 
+			// cancel_btn
+			// 
+			this->cancel_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->cancel_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->cancel_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Maroon;
+			this->cancel_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cancel_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cancel_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->cancel_btn->Location = System::Drawing::Point(532, 18);
+			this->cancel_btn->Name = L"cancel_btn";
+			this->cancel_btn->Size = System::Drawing::Size(175, 70);
+			this->cancel_btn->TabIndex = 4;
+			this->cancel_btn->Text = L"Cancel";
+			this->cancel_btn->UseVisualStyleBackColor = true;
+			this->cancel_btn->Click += gcnew System::EventHandler(this, &SVMainUI::cancel_sale_btn_Click);
+			this->cancel_btn->Visible = false;
 			// 
 			// btn_container
 			// 
@@ -158,6 +209,7 @@ namespace StockViewer {
 			this->product_mng_btn->TabIndex = 2;
 			this->product_mng_btn->Text = L" Products manager";
 			this->product_mng_btn->UseVisualStyleBackColor = false;
+			this->product_mng_btn->Click += gcnew System::EventHandler(this, &SVMainUI::product_mng_btn_Click);
 			// 
 			// new_sale_btn
 			// 
@@ -210,8 +262,10 @@ namespace StockViewer {
 			this->Text = L"ControlStock";
 			this->Load += gcnew System::EventHandler(this, &SVMainUI::SVMainUI_Load);
 			this->container_panel->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
 			this->btn_container->ResumeLayout(false);
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	template <class T>
@@ -238,5 +292,15 @@ namespace StockViewer {
 		advanced_dialog->ShowDialog();
 		this->Visible = true;
 	}
+private: System::Void product_mng_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	//PMDIALOG
+	this->cancel_btn->Visible = true;
+	ProductsUI^ products_dialog = gcnew ProductsUI();
+	open_info_panel(products_dialog);
+}
+private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->info_panel->Controls->RemoveAt(0);
+	this->cancel_btn->Visible = false;
+}
 };
 }

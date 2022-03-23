@@ -18,3 +18,5 @@ E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.exe.config
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.CopyComplete
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.UsersManagementUI.resources
 E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.UpdateUserUI.resources
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.vcxproj.AssemblyReference.cache
+E:\Trabajos\StockViewer\StockViewer\StockViewer\x64\Debug\StockViewer.ProductsUI.resources

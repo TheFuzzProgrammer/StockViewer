@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="ProductsUI.cpp" />
     <ClCompile Include="SVMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="DataBase.h" />
     <ClInclude Include="database_manager.h" />
+    <ClInclude Include="ProductsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SalesUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsUI.resx">
+      <DependentUpon>ProductsUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesUI.resx">
       <DependentUpon>SalesUI.h</DependentUpon>
