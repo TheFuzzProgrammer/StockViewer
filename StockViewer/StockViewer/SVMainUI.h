@@ -20,7 +20,7 @@ namespace StockViewer {
 		SVMainUI(void)
 		{
 			InitializeComponent();
-
+			
 		}
 
 	protected:
@@ -268,6 +268,10 @@ namespace StockViewer {
 
 		}
 #pragma endregion
+	public: void check_admin(bool _is_admin) {
+		this->advanced_btn->Enabled = _is_admin;
+	}
+
 	template <class T>
 	void open_info_panel(T SonForm) {
 		if (this->info_panel->Controls->Count > 0)

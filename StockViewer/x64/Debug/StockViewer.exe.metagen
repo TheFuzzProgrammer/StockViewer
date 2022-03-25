@@ -1,5 +1,6 @@
   StockViewer.AdvancedUI.resources - Embedded, ContainedInManifestFile, 
   StockViewer.CreateUser.resources - Embedded, ContainedInManifestFile, 
+  StockViewer.Login.resources - Embedded, ContainedInManifestFile, 
   StockViewer.ProductsUI.resources - Embedded, ContainedInManifestFile, 
   StockViewer.SalesUI.resources - Embedded, ContainedInManifestFile, 
   StockViewer.SearchUserUI.resources - Embedded, ContainedInManifestFile, 
@@ -231,9 +232,6 @@ Assembly System.Xml.XPath, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f
 	hash=None, flags=None
 Assembly System.Xml.XPath.XDocument, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
-Class StockViewer.ProductsUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class StockViewer.SalesUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -261,6 +259,15 @@ Class StockViewer.UsersManagement: AutoLayout, AnsiClass, Class, Public, BeforeF
 Class StockViewer.AdvancedUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class StockViewer.ProductsUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class StockViewer.SVMainUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    check_admin(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    open_info_panel<StockViewer::ProductsUI ^>(ProductsUI): PrivateScope, Public, HideBySig
+Class StockViewer.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

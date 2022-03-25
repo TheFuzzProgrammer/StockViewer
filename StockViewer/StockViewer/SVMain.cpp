@@ -1,11 +1,11 @@
-#include "SVMainUI.h"
+#include "Login.h"
 #include "userslib.h"
 
 using namespace StockViewer;
 
 int main() {
 
-	Application::Run(gcnew SVMainUI);
+	Application::Run(gcnew Login);
 
 	return 0;
 }
