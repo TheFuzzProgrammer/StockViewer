@@ -33,29 +33,18 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ key_input;
-
 	private: System::Windows::Forms::TextBox^ id_input;
-
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ tittle_label;
-
 	private: System::Windows::Forms::Button^ log_in_btn;
 	private: DataBase^ database_data;
 	private: System::Windows::Forms::Button^ cancel_sale_btn;
-
-	private:
-		/// <summary>
-		/// Variable del diseñador necesaria.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	private: System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
