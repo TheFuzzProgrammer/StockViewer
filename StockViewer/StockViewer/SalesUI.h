@@ -51,8 +51,7 @@ namespace StockViewer {
     private: System::Windows::Forms::CheckedListBox^ checkedListBox1;
     private: System::Windows::Forms::Label^ label7;
     private: System::Windows::Forms::TextBox^ document;
-    private:
-		System::ComponentModel::Container ^components;
+    private: System::ComponentModel::Container ^components;
 
 #pragma region 
 

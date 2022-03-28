@@ -17,5 +17,6 @@ public:
 	String^ delete_database(String^, String^);
 	void open_session();
 	void close_session();
+	~DataBase();
 
 };

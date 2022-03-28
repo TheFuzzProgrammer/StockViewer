@@ -19,7 +19,6 @@ namespace StockViewer {
 			database_data = gcnew DataBase("datasource=localhost; username=root; password=""; database=svlocal;");
 			InitializeComponent();
 		}
-
 	protected:
 		~Login()
 		{
@@ -40,10 +39,10 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ tittle_label;
 	private: System::Windows::Forms::Button^ log_in_btn;
 	private: DataBase^ database_data;
-	private: System::Windows::Forms::Button^ cancel_sale_btn;
+
 	private: System::ComponentModel::Container ^components;
 
-#pragma region Windows Form Designer generated code
+#pragma region
 
 		void InitializeComponent(void)
 		{
@@ -57,7 +56,6 @@ namespace StockViewer {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->cancel_sale_btn = (gcnew System::Windows::Forms::Button());
 			this->tittle_label = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -160,32 +158,12 @@ namespace StockViewer {
 			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel2->Controls->Add(this->cancel_sale_btn);
 			this->panel2->Controls->Add(this->tittle_label);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 0);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(344, 116);
 			this->panel2->TabIndex = 0;
-			// 
-			// cancel_sale_btn
-			// 
-			this->cancel_sale_btn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
-			this->cancel_sale_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->cancel_sale_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Maroon;
-			this->cancel_sale_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cancel_sale_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->cancel_sale_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->cancel_sale_btn->Location = System::Drawing::Point(305, 0);
-			this->cancel_sale_btn->Name = L"cancel_sale_btn";
-			this->cancel_sale_btn->Size = System::Drawing::Size(39, 35);
-			this->cancel_sale_btn->TabIndex = 11;
-			this->cancel_sale_btn->Text = L"X";
-			this->cancel_sale_btn->UseVisualStyleBackColor = true;
-			this->cancel_sale_btn->Click += gcnew System::EventHandler(this, &Login::cancel_sale_btn_Click);
 			// 
 			// tittle_label
 			// 
@@ -209,10 +187,14 @@ namespace StockViewer {
 			this->Controls->Add(this->panel1);
 			this->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(360, 566);
+			this->MinimumSize = System::Drawing::Size(360, 566);
 			this->Name = L"Login";
+			this->Opacity = 0.98;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
 			this->panel1->ResumeLayout(false);
@@ -245,7 +227,7 @@ namespace StockViewer {
 					open_ui(true);
 				}
 				else {
-					MessageBox::Show("Incorrect key");
+					MessageBox::Show("Incorrect user or key");
 				}
 			}
 			else {
@@ -260,9 +242,6 @@ namespace StockViewer {
 	}
 	private: System::Void log_in_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		start_main();
-	}
-	private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
 	}
 	private: System::Void id_input_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		if (e->KeyValue == 13) {

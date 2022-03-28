@@ -2,6 +2,7 @@
 #include "SalesUI.h"
 #include "AdvancedUI.h"
 #include "ProductsUI.h"
+#include "QuickCheck.h"
 
 using namespace std;
 
@@ -119,8 +120,8 @@ namespace StockViewer {
 			this->cancel_btn->TabIndex = 4;
 			this->cancel_btn->Text = L"Cancel";
 			this->cancel_btn->UseVisualStyleBackColor = true;
-			this->cancel_btn->Click += gcnew System::EventHandler(this, &SVMainUI::cancel_sale_btn_Click);
 			this->cancel_btn->Visible = false;
+			this->cancel_btn->Click += gcnew System::EventHandler(this, &SVMainUI::cancel_sale_btn_Click);
 			// 
 			// btn_container
 			// 
@@ -184,8 +185,9 @@ namespace StockViewer {
 			this->search_product_btn->Name = L"search_product_btn";
 			this->search_product_btn->Size = System::Drawing::Size(289, 70);
 			this->search_product_btn->TabIndex = 3;
-			this->search_product_btn->Text = L" Search product";
+			this->search_product_btn->Text = L"Quick stock check";
 			this->search_product_btn->UseVisualStyleBackColor = false;
+			this->search_product_btn->Click += gcnew System::EventHandler(this, &SVMainUI::search_product_btn_Click);
 			// 
 			// product_mng_btn
 			// 
@@ -296,15 +298,19 @@ namespace StockViewer {
 		advanced_dialog->ShowDialog();
 		this->Visible = true;
 	}
-private: System::Void product_mng_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	//PMDIALOG
-	this->cancel_btn->Visible = true;
-	ProductsUI^ products_dialog = gcnew ProductsUI();
-	open_info_panel(products_dialog);
+	private: System::Void product_mng_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		//PMDIALOG
+		this->cancel_btn->Visible = true;
+		ProductsUI^ products_dialog = gcnew ProductsUI();
+		open_info_panel(products_dialog);
 }
-private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->info_panel->Controls->RemoveAt(0);
-	this->cancel_btn->Visible = false;
+	private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->info_panel->Controls->RemoveAt(0);
+		this->cancel_btn->Visible = false;
+}
+	private: System::Void search_product_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		QuickCheck^ qc_dialog = gcnew QuickCheck();
+		qc_dialog->ShowDialog();
 }
 };
 }

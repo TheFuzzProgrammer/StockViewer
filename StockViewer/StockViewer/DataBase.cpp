@@ -15,13 +15,15 @@ void DataBase::open_session() {
 		this->database_connector->Open(); //open the db connection
 	}
 	catch(Exception^ db_exception) {
-		MessageBox::Show("Database critical error");
+		MessageBox::Show("Database critical error \n"+ db_exception->Message);
 	}
 }
 
 void DataBase::close_session() {
 	this->database_connector->Close(); //closes the db connection
 }
+
+
 
 DataTable^ DataBase::get_data(String^ _query) {
 	String^ sql_query = _query; //Your Query
@@ -69,4 +71,8 @@ String^ DataBase::delete_database(String^ _db, String^ _query) {
 	//not finished yet
 	String^ query = "delete from svlocal.products WHERE code = '0000002'";
 	return query;
+}
+
+DataBase::~DataBase() {
+	delete this;
 }

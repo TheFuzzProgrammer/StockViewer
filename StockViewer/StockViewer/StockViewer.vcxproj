@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="QuickCheck.cpp" />
     <ClCompile Include="SVMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +141,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProductsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="QuickCheck.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SalesUI.h">
@@ -170,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsUI.resx">
       <DependentUpon>ProductsUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuickCheck.resx">
+      <DependentUpon>QuickCheck.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesUI.resx">
       <DependentUpon>SalesUI.h</DependentUpon>
