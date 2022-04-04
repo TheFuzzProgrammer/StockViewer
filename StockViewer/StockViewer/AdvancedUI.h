@@ -1,6 +1,6 @@
 #pragma once
-#include "UsersManagementUI.h"
-#include "CreateUser.h"
+#include "UsersManagementUI.h" //DB
+
 
 namespace StockViewer {
 	using namespace System;

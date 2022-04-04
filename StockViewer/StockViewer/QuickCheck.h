@@ -1,5 +1,6 @@
 #pragma once
 #include "DataBase.h"
+#include "database_manager.h"
 
 namespace StockViewer {
 
@@ -37,7 +38,6 @@ namespace StockViewer {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Button^ qk_srch_btn;
 	private: System::Windows::Forms::Label^ result_lbl;
-
 	private: DataBase^ database_data;
 
 #pragma region
@@ -192,10 +192,10 @@ namespace StockViewer {
 
 	}
 #pragma endregion
-	String^ get_query_products(String^ _code) {
+	/*String^ get_query_products(String^ _code) {
 		String^ query = "select * from svlocal.products where code = '" + _code + "'";
 		return query;
-	}
+	}*/
 	private: DataTable^ quick_check() {
 		if (this->code_input->Text != "") {
 			this->database_data->open_session();
@@ -229,12 +229,12 @@ namespace StockViewer {
 	private: System::Void qk_srch_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		show_result();
 	}
-private: System::Void code_input_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if (e->KeyValue == 13) {
-		show_result();
+	private: System::Void code_input_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == 13) {
+			show_result();
+		}
+		else {
+		}
 	}
-	else {
-	}
-}
 };
 }

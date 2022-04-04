@@ -1,8 +1,8 @@
 #pragma once
 #include "SalesUI.h"
-#include "AdvancedUI.h"
-#include "ProductsUI.h"
-#include "QuickCheck.h"
+#include "AdvancedUI.h"	
+#include "ProductsUI.h"	//NODB
+#include "QuickCheck.h" 
 
 using namespace std;
 

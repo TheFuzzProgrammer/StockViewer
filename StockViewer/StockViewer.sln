@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StockViewer", "StockViewer\StockViewer.vcxproj", "{4548C94E-80B9-4CCC-BFAB-B84D9E1E497A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "userslib", "..\ExternalDependences\userslib\userslib\userslib.vcxproj", "{45D18EC6-FE75-4FC6-92CF-008F51101572}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{4548C94E-80B9-4CCC-BFAB-B84D9E1E497A}.Release|x64.Build.0 = Release|x64
 		{4548C94E-80B9-4CCC-BFAB-B84D9E1E497A}.Release|x86.ActiveCfg = Release|Win32
 		{4548C94E-80B9-4CCC-BFAB-B84D9E1E497A}.Release|x86.Build.0 = Release|Win32
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Debug|x64.ActiveCfg = Debug|x64
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Debug|x64.Build.0 = Debug|x64
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Debug|x86.ActiveCfg = Debug|Win32
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Debug|x86.Build.0 = Debug|Win32
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Release|x64.ActiveCfg = Release|x64
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Release|x64.Build.0 = Release|x64
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Release|x86.ActiveCfg = Release|Win32
+		{45D18EC6-FE75-4FC6-92CF-008F51101572}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

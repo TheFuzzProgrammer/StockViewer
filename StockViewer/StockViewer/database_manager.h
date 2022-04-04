@@ -1,5 +1,5 @@
 #pragma once
-
+#include "DataBase.h"
 using namespace System;
 using namespace std;
 

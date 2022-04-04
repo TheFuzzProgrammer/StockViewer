@@ -1,5 +1,4 @@
 #pragma once
-#include "DataBase.h"
 #include "database_manager.h"
 
 namespace StockViewer {

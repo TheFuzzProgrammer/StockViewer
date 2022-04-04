@@ -1,4 +1,5 @@
 #pragma once
+#include "UsersManagementUI.h"
 
 namespace StockViewer {
 
@@ -15,9 +16,11 @@ namespace StockViewer {
 		SalesUI(void)
 		{
 			InitializeComponent();
+            database_data = gcnew DataBase("datasource=localhost; username=root; password=""; database=svlocal;");
+            total_ammount = 0.0;
 		}
-
 	protected:
+
 		~SalesUI()
 		{
 			if (components)
@@ -26,7 +29,6 @@ namespace StockViewer {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panel1;
-	protected:
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel3;
@@ -40,9 +42,8 @@ namespace StockViewer {
 	private: System::Windows::Forms::Panel^ panel5;
 	private: System::Windows::Forms::Button^ button1;
     private: System::Windows::Forms::Button^ add_item_btn;
-
     private: System::Windows::Forms::Panel^ panel6;
-    private: System::Windows::Forms::Label^ label6;
+    private: System::Windows::Forms::Label^ total_lbl;
     private: System::Windows::Forms::Label^ label5;
     private: System::Windows::Forms::Label^ label4;
     private: System::Windows::Forms::Label^ label3;
@@ -50,9 +51,10 @@ namespace StockViewer {
     private: System::Windows::Forms::Label^ label1;
     private: System::Windows::Forms::CheckedListBox^ checkedListBox1;
     private: System::Windows::Forms::Label^ label7;
-    private: System::Windows::Forms::TextBox^ document;
+    private: System::Windows::Forms::TextBox^ code_in;
     private: System::ComponentModel::Container ^components;
-
+    private: DataBase^ database_data;
+    private: float total_ammount;
 #pragma region 
 
 		void InitializeComponent(void)
@@ -71,7 +73,7 @@ namespace StockViewer {
             this->panel3 = (gcnew System::Windows::Forms::Panel());
             this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
             this->panel6 = (gcnew System::Windows::Forms::Panel());
-            this->label6 = (gcnew System::Windows::Forms::Label());
+            this->total_lbl = (gcnew System::Windows::Forms::Label());
             this->label5 = (gcnew System::Windows::Forms::Label());
             this->label4 = (gcnew System::Windows::Forms::Label());
             this->label3 = (gcnew System::Windows::Forms::Label());
@@ -79,7 +81,7 @@ namespace StockViewer {
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->panel5 = (gcnew System::Windows::Forms::Panel());
             this->label7 = (gcnew System::Windows::Forms::Label());
-            this->document = (gcnew System::Windows::Forms::TextBox());
+            this->code_in = (gcnew System::Windows::Forms::TextBox());
             this->button1 = (gcnew System::Windows::Forms::Button());
             this->add_item_btn = (gcnew System::Windows::Forms::Button());
             this->panel1->SuspendLayout();
@@ -125,6 +127,7 @@ namespace StockViewer {
             this->add_observation_btn->TabIndex = 5;
             this->add_observation_btn->Text = L"Add observation";
             this->add_observation_btn->UseVisualStyleBackColor = true;
+            this->add_observation_btn->Click += gcnew System::EventHandler(this, &SalesUI::add_observation_btn_Click);
             // 
             // restart_sale_btn
             // 
@@ -147,6 +150,7 @@ namespace StockViewer {
             this->restart_sale_btn->TabIndex = 4;
             this->restart_sale_btn->Text = L"Restart sale";
             this->restart_sale_btn->UseVisualStyleBackColor = true;
+            this->restart_sale_btn->Click += gcnew System::EventHandler(this, &SalesUI::restart_sale_btn_Click);
             // 
             // search_client_btn
             // 
@@ -169,6 +173,7 @@ namespace StockViewer {
             this->search_client_btn->TabIndex = 3;
             this->search_client_btn->Text = L"Search client";
             this->search_client_btn->UseVisualStyleBackColor = true;
+            this->search_client_btn->Click += gcnew System::EventHandler(this, &SalesUI::search_client_btn_Click);
             // 
             // add_discount_btn
             // 
@@ -235,6 +240,7 @@ namespace StockViewer {
             this->preview_btn->TabIndex = 5;
             this->preview_btn->Text = L"Preview";
             this->preview_btn->UseVisualStyleBackColor = true;
+            this->preview_btn->Click += gcnew System::EventHandler(this, &SalesUI::preview_btn_Click);
             // 
             // cancel_sale_btn
             // 
@@ -305,7 +311,7 @@ namespace StockViewer {
             // 
             this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
                 static_cast<System::Int32>(static_cast<System::Byte>(30)));
-            this->panel6->Controls->Add(this->label6);
+            this->panel6->Controls->Add(this->total_lbl);
             this->panel6->Controls->Add(this->label5);
             this->panel6->Controls->Add(this->label4);
             this->panel6->Controls->Add(this->label3);
@@ -317,17 +323,17 @@ namespace StockViewer {
             this->panel6->Size = System::Drawing::Size(719, 52);
             this->panel6->TabIndex = 2;
             // 
-            // label6
+            // total_lbl
             // 
-            this->label6->AutoSize = true;
-            this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->total_lbl->AutoSize = true;
+            this->total_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label6->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->label6->Location = System::Drawing::Point(681, 16);
-            this->label6->Name = L"label6";
-            this->label6->Size = System::Drawing::Size(26, 30);
-            this->label6->TabIndex = 5;
-            this->label6->Text = L"0";
+            this->total_lbl->ForeColor = System::Drawing::SystemColors::ControlDark;
+            this->total_lbl->Location = System::Drawing::Point(551, 16);
+            this->total_lbl->Name = L"total_lbl";
+            this->total_lbl->Size = System::Drawing::Size(26, 30);
+            this->total_lbl->TabIndex = 5;
+            this->total_lbl->Text = L"0";
             // 
             // label5
             // 
@@ -335,7 +341,7 @@ namespace StockViewer {
             this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label5->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->label5->Location = System::Drawing::Point(465, 14);
+            this->label5->Location = System::Drawing::Point(361, 14);
             this->label5->Name = L"label5";
             this->label5->Size = System::Drawing::Size(26, 30);
             this->label5->TabIndex = 4;
@@ -347,7 +353,7 @@ namespace StockViewer {
             this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label4->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->label4->Location = System::Drawing::Point(259, 16);
+            this->label4->Location = System::Drawing::Point(140, 16);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(26, 30);
             this->label4->TabIndex = 3;
@@ -394,7 +400,7 @@ namespace StockViewer {
             this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
                 static_cast<System::Int32>(static_cast<System::Byte>(30)));
             this->panel5->Controls->Add(this->label7);
-            this->panel5->Controls->Add(this->document);
+            this->panel5->Controls->Add(this->code_in);
             this->panel5->Controls->Add(this->button1);
             this->panel5->Controls->Add(this->add_item_btn);
             this->panel5->Dock = System::Windows::Forms::DockStyle::Top;
@@ -415,18 +421,18 @@ namespace StockViewer {
             this->label7->TabIndex = 8;
             this->label7->Text = L"CODE";
             // 
-            // document
+            // code_in
             // 
-            this->document->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+            this->code_in->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
                 static_cast<System::Int32>(static_cast<System::Byte>(25)));
-            this->document->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-            this->document->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->code_in->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+            this->code_in->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->document->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->document->Location = System::Drawing::Point(131, 29);
-            this->document->Name = L"document";
-            this->document->Size = System::Drawing::Size(327, 37);
-            this->document->TabIndex = 7;
+            this->code_in->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->code_in->Location = System::Drawing::Point(131, 29);
+            this->code_in->Name = L"code_in";
+            this->code_in->Size = System::Drawing::Size(327, 37);
+            this->code_in->TabIndex = 7;
             // 
             // button1
             // 
@@ -495,23 +501,47 @@ namespace StockViewer {
         }
 #pragma endregion
 	private: System::Void SalesUI_Load(System::Object^ sender, System::EventArgs^ e) {
+        this->total_lbl->Text = this->total_ammount.ToString();
 	}
-private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void add_discount_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void add_item_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-
-    this->checkedListBox1->Items->Add("String",true);
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-    try {
-        this->checkedListBox1->Items->Remove(this->checkedListBox1->SelectedItem);
+    private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	    this->Close();
     }
-    catch(Exception^ e) {
-        System::Windows::Forms::MessageBox::Show(e->Message);
+    private: System::Void add_discount_btn_Click(System::Object^ sender, System::EventArgs^ e) {
     }
-}
+    private: System::Void add_item_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+        String^ item;
+        if (this->code_in->Text != "") {
+            database_data->open_session();
+            DataTable^ table = database_data->get_data(get_query_products(this->code_in->Text));
+            database_data->close_session();
+            try {
+               item = table->Rows[0]->ItemArray[6]->ToString();
+               this->checkedListBox1->Items->Add(item, true);
+               total_ammount += Convert::ToDouble(table->Rows[0]->ItemArray[6]->ToString());
+            }
+            catch (Exception^ e) {
+                MessageBox::Show(e->Message);
+            }
+        }
+        this->total_lbl->Text = Convert::ToString(total_ammount);  
+    }
+    private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+        try {
+            total_ammount -= Convert::ToDouble(this->checkedListBox1->SelectedItem->ToString());
+            this->checkedListBox1->Items->Remove(this->checkedListBox1->SelectedItem);
+            this->total_lbl->Text = Convert::ToString(total_ammount);
+        }
+        catch(Exception^ e) {
+            System::Windows::Forms::MessageBox::Show(e->Message);
+        }
+    }
+    private: System::Void search_client_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void restart_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void add_observation_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void preview_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
 };
 }

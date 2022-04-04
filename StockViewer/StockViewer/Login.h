@@ -28,7 +28,6 @@ namespace StockViewer {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panel1;
-	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ key_input;
@@ -39,7 +38,6 @@ namespace StockViewer {
 	private: System::Windows::Forms::Label^ tittle_label;
 	private: System::Windows::Forms::Button^ log_in_btn;
 	private: DataBase^ database_data;
-
 	private: System::ComponentModel::Container ^components;
 
 #pragma region

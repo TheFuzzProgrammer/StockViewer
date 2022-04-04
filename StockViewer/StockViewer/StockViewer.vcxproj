@@ -124,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataBase.cpp" />
-    <ClCompile Include="QuickCheck.cpp" />
     <ClCompile Include="SVMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +154,7 @@
     <ClInclude Include="SVMainUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TypeConv.h" />
     <ClInclude Include="UpdateUserUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
