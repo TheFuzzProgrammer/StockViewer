@@ -1,5 +1,6 @@
 #pragma once
 #include "UsersManagementUI.h"
+#include "TypeConv.h"
 
 namespace StockViewer {
 
@@ -517,7 +518,7 @@ namespace StockViewer {
             try {
                item = table->Rows[0]->ItemArray[6]->ToString();
                this->checkedListBox1->Items->Add(item, true);
-               total_ammount += Convert::ToDouble(table->Rows[0]->ItemArray[6]->ToString());
+               total_ammount += TypeConversions::StringToFloat(table->Rows[0]->ItemArray[6]->ToString());
             }
             catch (Exception^ e) {
                 MessageBox::Show(e->Message);
@@ -527,9 +528,12 @@ namespace StockViewer {
     }
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
         try {
-            total_ammount -= Convert::ToDouble(this->checkedListBox1->SelectedItem->ToString());
-            this->checkedListBox1->Items->Remove(this->checkedListBox1->SelectedItem);
-            this->total_lbl->Text = Convert::ToString(total_ammount);
+            if (this->checkedListBox1->SelectedItem) {
+                total_ammount -= TypeConversions::StringToFloat(this->checkedListBox1->SelectedItem->ToString());
+                this->checkedListBox1->Items->Remove(this->checkedListBox1->SelectedItem);
+                this->total_lbl->Text = Convert::ToString(total_ammount);
+            }
+
         }
         catch(Exception^ e) {
             System::Windows::Forms::MessageBox::Show(e->Message);
