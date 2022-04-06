@@ -45,8 +45,8 @@ namespace StockViewer {
     private: System::Windows::Forms::Button^ add_item_btn;
     private: System::Windows::Forms::Panel^ panel6;
     private: System::Windows::Forms::Label^ total_lbl;
-    private: System::Windows::Forms::Label^ label5;
-    private: System::Windows::Forms::Label^ label4;
+    private: System::Windows::Forms::Label^ taxes_lbl;
+    private: System::Windows::Forms::Label^ subt_lbl;
     private: System::Windows::Forms::Label^ label3;
     private: System::Windows::Forms::Label^ label2;
     private: System::Windows::Forms::Label^ label1;
@@ -55,7 +55,10 @@ namespace StockViewer {
     private: System::Windows::Forms::TextBox^ code_in;
     private: System::ComponentModel::Container ^components;
     private: DataBase^ database_data;
+    private: System::Windows::Forms::Label^ client_lbl;
+    private: System::Windows::Forms::Label^ label6;
     private: float total_ammount;
+
 #pragma region 
 
 		void InitializeComponent(void)
@@ -74,9 +77,11 @@ namespace StockViewer {
             this->panel3 = (gcnew System::Windows::Forms::Panel());
             this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
             this->panel6 = (gcnew System::Windows::Forms::Panel());
+            this->client_lbl = (gcnew System::Windows::Forms::Label());
+            this->label6 = (gcnew System::Windows::Forms::Label());
             this->total_lbl = (gcnew System::Windows::Forms::Label());
-            this->label5 = (gcnew System::Windows::Forms::Label());
-            this->label4 = (gcnew System::Windows::Forms::Label());
+            this->taxes_lbl = (gcnew System::Windows::Forms::Label());
+            this->subt_lbl = (gcnew System::Windows::Forms::Label());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->label1 = (gcnew System::Windows::Forms::Label());
@@ -218,9 +223,9 @@ namespace StockViewer {
             this->panel2->Controls->Add(this->cancel_sale_btn);
             this->panel2->Controls->Add(this->sell_btn);
             this->panel2->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel2->Location = System::Drawing::Point(289, 629);
+            this->panel2->Location = System::Drawing::Point(289, 635);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(719, 100);
+            this->panel2->Size = System::Drawing::Size(719, 94);
             this->panel2->TabIndex = 1;
             // 
             // preview_btn
@@ -235,7 +240,7 @@ namespace StockViewer {
             this->preview_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->preview_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->preview_btn->Location = System::Drawing::Point(283, 18);
+            this->preview_btn->Location = System::Drawing::Point(283, 13);
             this->preview_btn->Name = L"preview_btn";
             this->preview_btn->Size = System::Drawing::Size(175, 70);
             this->preview_btn->TabIndex = 5;
@@ -254,7 +259,7 @@ namespace StockViewer {
             this->cancel_sale_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->cancel_sale_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->cancel_sale_btn->Location = System::Drawing::Point(16, 18);
+            this->cancel_sale_btn->Location = System::Drawing::Point(16, 13);
             this->cancel_sale_btn->Name = L"cancel_sale_btn";
             this->cancel_sale_btn->Size = System::Drawing::Size(175, 70);
             this->cancel_sale_btn->TabIndex = 4;
@@ -272,7 +277,7 @@ namespace StockViewer {
             this->sell_btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->sell_btn->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->sell_btn->Location = System::Drawing::Point(536, 18);
+            this->sell_btn->Location = System::Drawing::Point(536, 13);
             this->sell_btn->Name = L"sell_btn";
             this->sell_btn->Size = System::Drawing::Size(175, 70);
             this->sell_btn->TabIndex = 3;
@@ -290,39 +295,50 @@ namespace StockViewer {
             this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
             this->panel3->Location = System::Drawing::Point(289, 0);
             this->panel3->Name = L"panel3";
-            this->panel3->Size = System::Drawing::Size(719, 629);
+            this->panel3->Size = System::Drawing::Size(719, 635);
             this->panel3->TabIndex = 2;
-            // 
-            // checkedListBox1
-            // 
-            this->checkedListBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
-                static_cast<System::Int32>(static_cast<System::Byte>(30)));
-            this->checkedListBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-            this->checkedListBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->checkedListBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->checkedListBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->checkedListBox1->FormattingEnabled = true;
-            this->checkedListBox1->Location = System::Drawing::Point(0, 88);
-            this->checkedListBox1->Name = L"checkedListBox1";
-            this->checkedListBox1->Size = System::Drawing::Size(719, 489);
-            this->checkedListBox1->TabIndex = 3;
             // 
             // panel6
             // 
             this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
                 static_cast<System::Int32>(static_cast<System::Byte>(30)));
+            this->panel6->Controls->Add(this->client_lbl);
+            this->panel6->Controls->Add(this->label6);
             this->panel6->Controls->Add(this->total_lbl);
-            this->panel6->Controls->Add(this->label5);
-            this->panel6->Controls->Add(this->label4);
+            this->panel6->Controls->Add(this->taxes_lbl);
+            this->panel6->Controls->Add(this->subt_lbl);
             this->panel6->Controls->Add(this->label3);
             this->panel6->Controls->Add(this->label2);
             this->panel6->Controls->Add(this->label1);
             this->panel6->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel6->Location = System::Drawing::Point(0, 577);
+            this->panel6->Location = System::Drawing::Point(0, 558);
             this->panel6->Name = L"panel6";
-            this->panel6->Size = System::Drawing::Size(719, 52);
+            this->panel6->Size = System::Drawing::Size(719, 77);
             this->panel6->TabIndex = 2;
+            // 
+            // client_lbl
+            // 
+            this->client_lbl->AutoSize = true;
+            this->client_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->client_lbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->client_lbl->Location = System::Drawing::Point(92, 3);
+            this->client_lbl->Name = L"client_lbl";
+            this->client_lbl->Size = System::Drawing::Size(0, 24);
+            this->client_lbl->TabIndex = 7;
+            // 
+            // label6
+            // 
+            this->label6->AutoSize = true;
+            this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label6->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->label6->Location = System::Drawing::Point(6, 3);
+            this->label6->Name = L"label6";
+            this->label6->Size = System::Drawing::Size(80, 24);
+            this->label6->TabIndex = 6;
+            this->label6->Text = L"Client: ";
             // 
             // total_lbl
             // 
@@ -330,35 +346,35 @@ namespace StockViewer {
             this->total_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->total_lbl->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->total_lbl->Location = System::Drawing::Point(551, 16);
+            this->total_lbl->Location = System::Drawing::Point(603, 42);
             this->total_lbl->Name = L"total_lbl";
             this->total_lbl->Size = System::Drawing::Size(26, 30);
             this->total_lbl->TabIndex = 5;
             this->total_lbl->Text = L"0";
             // 
-            // label5
+            // taxes_lbl
             // 
-            this->label5->AutoSize = true;
-            this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->taxes_lbl->AutoSize = true;
+            this->taxes_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->label5->Location = System::Drawing::Point(361, 14);
-            this->label5->Name = L"label5";
-            this->label5->Size = System::Drawing::Size(26, 30);
-            this->label5->TabIndex = 4;
-            this->label5->Text = L"0";
+            this->taxes_lbl->ForeColor = System::Drawing::SystemColors::ControlDark;
+            this->taxes_lbl->Location = System::Drawing::Point(410, 40);
+            this->taxes_lbl->Name = L"taxes_lbl";
+            this->taxes_lbl->Size = System::Drawing::Size(26, 30);
+            this->taxes_lbl->TabIndex = 4;
+            this->taxes_lbl->Text = L"0";
             // 
-            // label4
+            // subt_lbl
             // 
-            this->label4->AutoSize = true;
-            this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->subt_lbl->AutoSize = true;
+            this->subt_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label4->ForeColor = System::Drawing::SystemColors::ControlDark;
-            this->label4->Location = System::Drawing::Point(140, 16);
-            this->label4->Name = L"label4";
-            this->label4->Size = System::Drawing::Size(26, 30);
-            this->label4->TabIndex = 3;
-            this->label4->Text = L"0";
+            this->subt_lbl->ForeColor = System::Drawing::SystemColors::ControlDark;
+            this->subt_lbl->Location = System::Drawing::Point(234, 42);
+            this->subt_lbl->Name = L"subt_lbl";
+            this->subt_lbl->Size = System::Drawing::Size(26, 30);
+            this->subt_lbl->TabIndex = 3;
+            this->subt_lbl->Text = L"0";
             // 
             // label3
             // 
@@ -366,7 +382,7 @@ namespace StockViewer {
             this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->label3->Location = System::Drawing::Point(291, 19);
+            this->label3->Location = System::Drawing::Point(340, 45);
             this->label3->Name = L"label3";
             this->label3->Size = System::Drawing::Size(64, 24);
             this->label3->TabIndex = 2;
@@ -378,7 +394,7 @@ namespace StockViewer {
             this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->label2->Location = System::Drawing::Point(48, 19);
+            this->label2->Location = System::Drawing::Point(142, 45);
             this->label2->Name = L"label2";
             this->label2->Size = System::Drawing::Size(94, 24);
             this->label2->TabIndex = 1;
@@ -390,7 +406,7 @@ namespace StockViewer {
             this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-            this->label1->Location = System::Drawing::Point(491, 19);
+            this->label1->Location = System::Drawing::Point(543, 45);
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(58, 24);
             this->label1->TabIndex = 0;
@@ -473,6 +489,21 @@ namespace StockViewer {
             this->add_item_btn->TabIndex = 5;
             this->add_item_btn->UseVisualStyleBackColor = true;
             this->add_item_btn->Click += gcnew System::EventHandler(this, &SalesUI::add_item_btn_Click);
+            //
+            // checkedListBox1
+            // 
+            this->checkedListBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+                static_cast<System::Int32>(static_cast<System::Byte>(30)));
+            this->checkedListBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->checkedListBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->checkedListBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->checkedListBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+            this->checkedListBox1->FormattingEnabled = true;
+            this->checkedListBox1->Location = System::Drawing::Point(0, 88);
+            this->checkedListBox1->Name = L"checkedListBox1";
+            this->checkedListBox1->Size = System::Drawing::Size(719, 470);
+            this->checkedListBox1->TabIndex = 3;
             // 
             // SalesUI
             // 
@@ -504,11 +535,14 @@ namespace StockViewer {
 	private: System::Void SalesUI_Load(System::Object^ sender, System::EventArgs^ e) {
         this->total_lbl->Text = this->total_ammount.ToString();
 	}
+
     private: System::Void cancel_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 	    this->Close();
-    }
+    } 
+
     private: System::Void add_discount_btn_Click(System::Object^ sender, System::EventArgs^ e) {
     }
+
     private: System::Void add_item_btn_Click(System::Object^ sender, System::EventArgs^ e) {
         String^ item;
         if (this->code_in->Text != "") {
@@ -526,6 +560,7 @@ namespace StockViewer {
         }
         this->total_lbl->Text = Convert::ToString(total_ammount);  
     }
+
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
         try {
             if (this->checkedListBox1->SelectedItem) {
@@ -539,12 +574,23 @@ namespace StockViewer {
             System::Windows::Forms::MessageBox::Show(e->Message);
         }
     }
+
     private: System::Void search_client_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+
     }
+
     private: System::Void restart_sale_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+        this->client_lbl->ResetText();
+        this->total_lbl->ResetText();
+        this->taxes_lbl->ResetText();
+        this->subt_lbl->ResetText();
+        this->total_ammount = 0;
+        this->checkedListBox1->Items->Clear();
     }
+
     private: System::Void add_observation_btn_Click(System::Object^ sender, System::EventArgs^ e) {
     }
+
     private: System::Void preview_btn_Click(System::Object^ sender, System::EventArgs^ e) {
     }
 };
