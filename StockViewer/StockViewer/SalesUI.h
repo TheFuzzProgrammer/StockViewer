@@ -550,7 +550,7 @@ namespace StockViewer {
             DataTable^ table = database_data->get_data(get_query_products(this->code_in->Text));
             database_data->close_session();
             try {
-               item = table->Rows[0]->ItemArray[6]->ToString();
+               item = table->Rows[0]->ItemArray[1]->ToString() + " PRICE: " + table->Rows[0]->ItemArray[6]->ToString();
                this->checkedListBox1->Items->Add(item, true);
                total_ammount += TypeConversions::StringToFloat(table->Rows[0]->ItemArray[6]->ToString());
             }
