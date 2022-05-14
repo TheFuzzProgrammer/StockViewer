@@ -1,6 +1,6 @@
 # Stock Viewer
 ## Remember to use /CLR 
-
+Use visualc++ compiler w /clr param 
 # Pictures
 ![Screenshots](/StockViewer/StockViewer/TEMP/LogIn.png)
 ![Screenshots](/StockViewer/StockViewer/TEMP/Main.png)
