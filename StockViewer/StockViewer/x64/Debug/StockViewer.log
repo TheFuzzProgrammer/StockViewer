@@ -1,6 +1,18 @@
-﻿  DataBase.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  Generando código...
+﻿  SVMain.cpp
+E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(31,10): warning C4251: 'users::Person::gendre': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
+D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xstring(4927): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(32,10): warning C4251: 'users::Person::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
+D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xstring(4927): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(33,10): warning C4251: 'users::Person::surname': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
+D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xstring(4927): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(34,10): warning C4251: 'users::Person::birth': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
+D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xstring(4927): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+E:\Trabajos\StockViewer\ExternalDependences\userslib\userslib\userslib.h(35,10): warning C4251: 'users::Person::document': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'users::Person'
+D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xstring(4927): message : vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+E:\Trabajos\StockViewer\StockViewer\StockViewer\TypeConv.h(36,43): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+E:\Trabajos\StockViewer\StockViewer\StockViewer\Login.h(386,4): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+E:\Trabajos\StockViewer\StockViewer\StockViewer\Login.h(413,4): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+E:\Trabajos\StockViewer\StockViewer\StockViewer\Login.h(419,4): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   DataBase.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
      Creando biblioteca E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.lib y objeto E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.exp
   StockViewer.vcxproj -> E:\Trabajos\StockViewer\StockViewer\x64\Debug\StockViewer.exe
