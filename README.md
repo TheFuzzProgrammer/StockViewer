@@ -6,7 +6,7 @@ You can modify the structure by adding attributes.
 change what you need to rly use.
 # What's next?
 
-- Remote DB connection (MySQL or Similar) - DONE
+> - Remote DB connection (MySQL or Similar) - DONE
 - Log in for users - DONE
 - Local DB connection
 - Files drop management
