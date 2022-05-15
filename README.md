@@ -1,4 +1,5 @@
 # Stock Viewer
+Another program to control your stock, sales, and more.
 ## Remember to use /CLR 
 - Use visualc++ compiler w /clr param 
 ## It REQUIRES an MySql Database for work
