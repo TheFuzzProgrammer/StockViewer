@@ -5,13 +5,14 @@ Use visualc++ compiler w /clr param
 You can modify the structure by adding attributes.
 change what you need to rly use.
 # What's next?
->-Remote DB connection (MySQL or Similar) - DONE
->-Log in for users - DONE
->-Local DB connection
->-Files drop management
->-Local reg storage
->-Visual changes <this will take more time>
->-When everithing went done, i will upload the full 
+
+-Remote DB connection (MySQL or Similar) - DONE
+-Log in for users - DONE
+-Local DB connection
+-Files drop management
+-Local reg storage
+-Visual changes <this will take more time>
+-When everithing went done, i will upload the full 
  python with PyQT code ask for it if you need
  (And maybe the QT version of this one, no.net, no refs, Pure C++)
 # Pictures
