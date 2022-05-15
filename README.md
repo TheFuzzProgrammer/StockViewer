@@ -1,12 +1,12 @@
 # Stock Viewer
 ## Remember to use /CLR 
-Use visualc++ compiler w /clr param 
+- Use visualc++ compiler w /clr param 
 ## It REQUIRES an MySql Database for work
-You can modify the structure by adding attributes.
-change what you need to rly use.
+- You can modify the structure by adding attributes.
+- change what you need to rly use.
 # What's next?
 
-> - Remote DB connection (MySQL or Similar) - DONE
+> - Remote DB connection (MySQL or Similar) - DONECancel changes
 > - Log in for users - DONE
 > - Local DB connection
 > - Files drop management
