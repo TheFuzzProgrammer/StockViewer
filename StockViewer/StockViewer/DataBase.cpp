@@ -68,7 +68,7 @@ String^ DataBase::update_database(String^ _db, String^ _query) {
 }
 
 String^ DataBase::delete_database(String^ _db, String^ _query) {
-	//not finished yet
+
 	String^ query = "delete from svlocal.products WHERE code = '0000002'";
 	return query;
 }

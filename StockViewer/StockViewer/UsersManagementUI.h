@@ -200,6 +200,8 @@ namespace StockViewer {
 			this->ClientSize = System::Drawing::Size(720, 629);
 			this->Controls->Add(this->info_panel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MaximumSize = System::Drawing::Size(720, 629);
+			this->MinimumSize = System::Drawing::Size(720, 629);
 			this->Name = L"UsersManagement";
 			this->Text = L"UsersManagement";
 			this->info_panel->ResumeLayout(false);

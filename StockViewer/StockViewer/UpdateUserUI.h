@@ -552,6 +552,7 @@ namespace StockViewer {
 			conditions += 1;
 			query = query + "name " + eq + c + this->name_in->Text + c + s;
 		}
+		// query name = 'NuevoNombre' 
 		if (this->set_surname && this->surname_in->Text != "") {
 			if (conditions > 0) {
 				co = ",";
@@ -664,6 +665,7 @@ namespace StockViewer {
 		//MAKE QUERY
 		database_data->open_session();
 		String^ error_db = database_data->update_database("users set ", get_update_query());
+		// users update set name = 'NuevoNombre' where name = 'NombreViejo'
 		MessageBox::Show(error_db);
 		database_data->close_session();
 	}
